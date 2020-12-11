@@ -189,6 +189,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
           this.getRegisterDetails();
           this.notifier.notify('success', 'Document upload success!');
         } else {
+          this.loading = false;
           this.notifier.notify('error', 'Something wrong...');
         }
         
@@ -357,6 +358,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
       this.univoxService.saveData(payload, this.registrationForm.value.id).subscribe(
         res => {
           if (res.nic_no) {
+            this.loading = false;
           // this.notifier.notify('success', 'Your details was recorded. Thank you!');
           this.isSign = false
           Swal.fire({
