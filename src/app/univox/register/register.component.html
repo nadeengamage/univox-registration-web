@@ -10,7 +10,7 @@
             </div> -->
             <div class="card-body">
                <div class="row">
-                  <div class="form-group col-12">
+                  <div class="form-group col-md-12 col-sm-12">
                      <label>Degree Programme</label>
                      <input type="text" disabled class="form-control" [(ngModel)]="showData.degree"/>
                   </div>
@@ -18,7 +18,7 @@
                <p class="top-note">Personal data (to be filled in block capitals)</p>
                <form [formGroup]="registrationForm" (ngSubmit)="updateDetails()">
                <div class="row">
-                  <div class="form-group col-7">
+                  <div class="form-group col-md-7 col-sm-12">
                      <label>NAME IN FULL AS IN NIC</label>
                      <textarea title="Enter name in full." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="nameInFull"
                         [ngClass]="submitted || isInvalidField('nameInFull') ? 'error-field' : ''"></textarea>
@@ -28,7 +28,7 @@
                         </span>
                      </div>
                   </div>
-                  <div class="form-group col-5">
+                  <div class="form-group col-md-5">
                      <label>NAME WITH INITIALS</label>
                      <textarea title="Enter name in initials." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="nameInInitial"
                         [ngClass]="submitted || isInvalidField('nameInInitial') ? 'error-field' : ''"></textarea>
@@ -38,7 +38,7 @@
                         </span>
                      </div>
                   </div>
-                  <div class="form-group col-7">
+                  <div class="form-group col-md-7">
                      <label>PERMANENT ADDRESS</label>
                      <textarea title="Enter permanent address." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="permanentAddress"
                         [ngClass]="submitted || isInvalidField('permanentAddress') ? 'error-field' : ''"></textarea>
@@ -48,7 +48,7 @@
                         </span>
                      </div>
                   </div>
-                  <div class="form-group col-7">
+                  <div class="form-group col-md-7">
                      <label>CONTACT ADDRESS <span>(if contact address differs from permanent address)</span></label>
                      <textarea title="Enter contact address." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="contactAddress"
                         [ngClass]="submitted || isInvalidField('contactAddress') ? 'error-field' : ''"></textarea>
@@ -61,10 +61,10 @@
                </div>
                <hr>
                <div class="row">
-                  <div class="form-group col-12">
+                  <div class="form-group col-md-12">
                      <label><b>Contact Numbers</b></label>
                   </div>
-                  <div class="form-group col-4">
+                  <div class="form-group col-md-4">
                      <label>Residence</label>
                      <input title="Enter residence number." type="number" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="residence"
                         [ngClass]="submitted || isInvalidField('residence') ? 'error-field' : ''">
@@ -74,7 +74,7 @@
                         </span>
                      </div>
                   </div>
-                  <div class="form-group col-4">
+                  <div class="form-group col-md-4">
                      <label>Mobile</label>
                      <input title="Enter mobile number." type="number" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="mobile"
                         [ngClass]="submitted || isInvalidField('mobile') ? 'error-field' : ''">
@@ -87,7 +87,7 @@
                </div>
                <hr>
                <div class="row">
-                  <div class="form-group col-4">
+                  <div class="form-group col-md-4">
                      <label>Email</label>
                      <input title="Enter valid email." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="email"
                         [ngClass]="submitted || isInvalidField('email') ? 'error-field' : ''">
@@ -97,7 +97,7 @@
                         </span>
                      </div>
                   </div>
-                  <div class="form-group col-4">
+                  <div class="form-group col-md-4">
                      <label>Nic No</label>
                      <!-- <input title="Your NIC." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="nic"
                         [ngClass]="submitted || isInvalidField('nic') ? 'error-field' : ''">
@@ -108,7 +108,7 @@
                      </div> -->
                      <input type="text" disabled class="form-control" [(ngModel)]="showData.nic" [ngModelOptions]="{standalone: true}"/>
                   </div>
-                  <div class="form-group col-4">
+                  <div class="form-group col-md-4">
                      <label>Nic issue date</label>
                      <input title="Yout NIC issue date." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="issueNic"
                         [ngClass]="submitted || isInvalidField('issueNic') ? 'error-field' : ''">
@@ -118,9 +118,9 @@
                         </span>
                      </div>
                   </div>
-                  <div class="form-group col-4">
+                  <div class="form-group col-md-4">
                      <label>Civil Status</label>
-                        <div class="col-12">
+                        <div class="col-md-12">
                            <div class="row">
                               <div class="custom-control custom-radio">
                                  <input id="SINGLE" type="radio" class="custom-control-input" [value]=false name="civil" formControlName="civil">
@@ -138,9 +138,9 @@
                         </span>
                      </div>
                   </div>
-                  <div class="form-group col-4">
+                  <div class="form-group col-md-4">
                      <label>Gender</label>
-                     <div class="col-12">
+                     <div class="col-md-12">
                         <div class="row">
                            <div class="custom-control custom-radio">
                               <input id="MALE" type="radio" class="custom-control-input" [value]=true name="gender" formControlName="gender">
@@ -158,7 +158,7 @@
                         </span>
                      </div>
                   </div>
-                  <div class="form-group col-4">
+                  <div class="form-group col-md-4">
                      <label>Nationality</label>
                      <input title="Enter nationality." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="nationality"
                         [ngClass]="submitted || isInvalidField('nationality') ? 'error-field' : ''">
@@ -168,7 +168,7 @@
                         </span>
                      </div>
                   </div>
-                  <div class="form-group col-4">
+                  <div class="form-group col-md-4">
                      <label>Religion</label>
                      <input title="Enter religion." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="religion"
                         [ngClass]="submitted || isInvalidField('religion') ? 'error-field' : ''">
@@ -181,7 +181,7 @@
                </div>
                <hr>
                <div class="row">
-                  <div class="form-group col-4">
+                  <div class="form-group col-md-4">
                      <label>District of residence</label>
                      <input title="Enter district of residence." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="district"
                         [ngClass]="submitted || isInvalidField('district') ? 'error-field' : ''">
@@ -193,10 +193,10 @@
                   </div>
                </div>
                <div class="row">
-                  <div class="form-group col-5">
+                  <div class="form-group col-md-5">
                      <label>Distance in km to the university from permanent address</label>
                   </div>
-                  <div class="form-group col-2">
+                  <div class="form-group col-md-2">
                      <input title="Enter distance." type="number" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="kmFromAddress"
                         [ngClass]="submitted || isInvalidField('kmFromAddress') ? 'error-field' : ''">
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('kmFromAddress')">
@@ -207,10 +207,10 @@
                   </div>
                </div>
                <div class="row">
-                  <div class="form-group col-5">
+                  <div class="form-group col-md-5">
                      <label>Distance in km to the university from place of work</label>
                   </div>
-                  <div class="form-group col-2">
+                  <div class="form-group col-md-2">
                      <input title="Enter distance." type="number" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="kmFromWork"
                         [ngClass]="submitted || isInvalidField('kmFromWork') ? 'error-field' : ''">
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('kmFromWork')">
@@ -222,11 +222,11 @@
                </div>
                <hr>
                <div class="row">
-                  <div class="form-group col-12">
+                  <div class="form-group col-md-12">
                      <label><b>Educational Qualifications:</b></label><br>
                      <label><u>g.c.e A/L results</u></label>
                   </div>
-                  <div class="form-group col-4">
+                  <div class="form-group col-md-4">
                      <label>Index no</label>
                      <input title="Enter A/L Index No." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="indexNo"
                         [ngClass]="submitted || isInvalidField('indexNo') ? 'error-field' : ''">
@@ -236,7 +236,7 @@
                         </span>
                      </div>
                   </div>
-                  <div class="form-group col-4">
+                  <div class="form-group col-md-4">
                      <label>Year</label>
                      <input title="Enter A/L year." type="number" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="year"
                         [ngClass]="submitted || isInvalidField('year') ? 'error-field' : ''">
@@ -246,7 +246,7 @@
                         </span>
                      </div>
                   </div>
-                  <div class="form-group col-4">
+                  <div class="form-group col-md-4">
                      <label>Z-score</label>
                      <input title="Enter z-score." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="zscore"
                         [ngClass]="submitted || isInvalidField('zscore') ? 'error-field' : ''">
@@ -258,7 +258,7 @@
                   </div>
                </div>
                <div class="row">
-                  <div class="form-group col-4">
+                  <div class="form-group col-md-4">
                      <label>Attempt</label>
                      <input title="Enter attempt." type="number" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="attempt"
                         [ngClass]="submitted || isInvalidField('attempt') ? 'error-field' : ''">
@@ -268,7 +268,7 @@
                         </span>
                      </div>
                   </div>
-                  <div class="form-group col-4">
+                  <div class="form-group col-md-4">
                      <label>Stream</label>
                      <input title="Enter stream." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="stream"
                         [ngClass]="submitted || isInvalidField('stream') ? 'error-field' : ''">
@@ -280,7 +280,7 @@
                   </div>
                </div>
                <div class="row">
-                  <div class="form-group col-8">
+                  <div class="form-group col-md-8">
                   <table class="table table-striped table-bordered row-border hover" id="tblMarksData">
                      <thead>
                         <tr>
@@ -415,13 +415,13 @@
                </div>
                <hr>
                <div class="row">
-                  <div class="form-group col-12">
+                  <div class="form-group col-md-12">
                      <p><b>Have you undertaken studies at present at any other University/Higher Education Instituation.</b></p>
                   </div>
                </div>
                <div class="row">
-                  <div class="form-group col-4">
-                     <div class="col-12">
+                  <div class="form-group col-md-4">
+                     <div class="col-md-12">
                         <div class="row">
                            <div class="custom-control custom-radio">
                               <input id="YES" type="radio" class="custom-control-input" [value]=true name="presentEducation" formControlName="presentEducation">
@@ -441,7 +441,7 @@
                   </div>
                </div>
                <div class="row" *ngIf="registrationForm.controls.presentEducation.value == true">
-                  <div class="form-group col-6">
+                  <div class="form-group col-md-6">
                      <label>if yes, name of the institute and course:</label>
                      <input title="Enter institute." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="isPresentInstitute"
                         [ngClass]="submitted || isInvalidField('isPresentInstitute') ? 'error-field' : ''">
@@ -453,7 +453,7 @@
                   </div>
                </div>
                <div class="row">
-                  <div class="form-group col-8">
+                  <div class="form-group col-md-8">
                      <label>Comment/s</label>
                      <textarea title="Enter comment." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="comment"
                         [ngClass]="submitted || isInvalidField('comment') ? 'error-field' : ''"></textarea>
@@ -465,15 +465,15 @@
                   </div>
                </div>
 
-               <div class="col-12">
+               <div class="col-md-12">
                <div class="row">
-               <div class="col-9 outer-signature">
+               <div class="col-md-9 outer-signature">
                   <label>Your Signature (sign here with your original signature)</label>
                   <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
                   <div class="btn btn-danger" (click)="clearSignature()"><i class="fa fa-eraser"></i> Clear Signature</div>&nbsp;
                   <div class="btn btn-warning" (click)="uploadFiles('', 'signature')"><i class="fa fa-save"></i> Save Signature</div>&nbsp;
                </div>
-               <div class="col-3">
+               <div class="col-md-3 document-section">
                   <div class="align-items-center mb-10">
                      <label><b>Upload NIC</b></label>
                      <div class="d-inline-flex flex-row-start">
@@ -503,7 +503,7 @@
                </div>
                </div>
                
-               <div class="col-12">
+               <div class="col-md-12">
                   <div class="d-flex flex-row-reverse">
                      <button type="submit" class="btn btn-success btn-save"><i class="fa fa-save"></i> Save Details</button>&nbsp;
                      <!-- <button class="btn btn-warning" (click)="showregistrationForm = false"><i class="fa fa-reply"></i>&nbsp; Cancel</button> -->

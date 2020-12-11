@@ -834,3 +834,55 @@ ngx-loading .custom-class {
   background-color: #29a93e !important;
   font-size: 13px !important;
 }
+
+@media only screen and (max-width: 769px) {
+  .mainlogin form {
+    width: 100%;
+    padding: 15em 15px;
+  }
+  .mainlogin .left {
+    display: none
+  }
+  .navbar {
+    text-align: center;
+  }
+  .navRight {
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
+  .navRight p, .navRight button {
+    float: right;
+    text-align: center;
+  }
+  main {
+    width: 100%;
+  }
+  .card-title {
+    font-size: 15px;
+  }
+  label, p {
+    font-size: 11px;
+  }
+  .flex-row-reverse {
+    flex-direction: unset !important
+  }
+  .btn-save {
+    margin: auto;
+  }
+  canvas {
+    width: 100% !important;
+  }
+  .document-section .d-inline-flex {
+    display: block !important;
+  }
+  .btn-save {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .btn-save {
+    width: 100% !important;
+  }
+}
