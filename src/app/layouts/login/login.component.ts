@@ -36,24 +36,29 @@ export class LoginComponent implements OnInit {
 
   loginUser() {
     this.loading = true;
-    this.authService.signIn(this.signinForm.value);
-      this.univoxService.getRegisterDetails(this.signinForm.value.username).subscribe(
-        res => {
-          if (res.nic_no === this.signinForm.value.username) {
-            localStorage.setItem('user_details', window.btoa(JSON.stringify(res.nic_no)));
-            // this.currentUser = res.nic_no;
-            this.notifier.notify('success', 'Welcome! ' + res.nic_no);
-            this.router.navigate(['univox/register']);
-          } else {
-            this.notifier.notify('error', 'User not found!');
-          }
-          this.loading = false;
-        },
-        error => {
-          this.notifier.notify('error', 'User not found!');
-          this.loading = false;
+    // this.authService.signIn(this.signinForm.value);
+    const data = {
+      identifier: this.signinForm.value.username,
+      password: this.signinForm.value.username
+    }
+    this.univoxService.authenticateUser(data).subscribe(
+      res => {
+        if (res.jwt) {
+          localStorage.setItem('access_token', res.jwt);
+          localStorage.setItem('user_details', window.btoa(JSON.stringify(this.signinForm.value.username)));
+          this.router.navigate(['univox/register']);
+          this.notifier.notify('success', 'Welcome! - ' + this.signinForm.value.username);
+        } else {
+          this.notifier.notify('error', 'Authentication failed!');
         }
-      );
+        this.loading = false;
+      },
+      error => {
+        this.notifier.notify('error', 'Authentication failed!');
+        this.loading = false;
+      }
+    );
+      
     
   }
 

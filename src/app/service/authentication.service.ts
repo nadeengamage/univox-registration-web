@@ -83,7 +83,7 @@ export class AuthService {
     localStorage.removeItem('user_details');
     if (removeToken == null) {
       this.router.navigate(['signin']);
-      this.notifier.notify('default', 'See yaa! ' + this.currentUser);
+      this.notifier.notify('default', this.currentUser + ' - Log out!');
     }
   }
 

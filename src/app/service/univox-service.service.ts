@@ -51,6 +51,7 @@ export class UnivoxService {
   private getDetailsEndPoint: string;
   private createDetailsEndPoint: string;
   private uploadFileEndPoint: string;
+  private authenticateEndPoint: string;
 
   constructor(private http: HttpUtilsService) {
     // USERS
@@ -104,6 +105,7 @@ export class UnivoxService {
     this.getDetailsEndPoint = 'http://139.162.14.211:8080/students/{nic}';
     this.createDetailsEndPoint = 'http://139.162.14.211:8080/students/{id}';
     this.uploadFileEndPoint = 'http://139.162.14.211:8080/upload';
+    this.authenticateEndPoint = 'http://139.162.14.211:8080/auth/local';
   }
 
 
@@ -271,6 +273,10 @@ export class UnivoxService {
   }
 
   ///////////
+  public authenticateUser(data) {
+    const auth = this.authenticateEndPoint
+    return this.http.post(auth, data);
+  }
   public getRegisterDetails(nic) {
     const getDetails = this.getDetailsEndPoint.replace(
       '{nic}', nic

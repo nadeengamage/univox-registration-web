@@ -6,6 +6,7 @@ import { Subject } from 'rxjs';
 import { UserPermissionService } from '../../service/permissions/user-permission-service';
 import { UserDetailsService } from '../../service/user-details-service';
 import { SignaturePad } from 'angular2-signaturepad/signature-pad';
+import { AuthService } from '../../service/authentication.service';
 import Swal from 'sweetalert2'
 declare var $: any;
 
@@ -44,7 +45,8 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     private univoxService: UnivoxService,
     private notifier: NotifierService,
     private userDetailsService: UserDetailsService,
-    private userPermissionService: UserPermissionService
+    private userPermissionService: UserPermissionService,
+    private authService: AuthService,
   ) {
     // this.userCreateForm = this.fb.group({
     //   username: ['', [Validators.required, Validators.minLength(8)]],
@@ -171,11 +173,11 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
       // submitFile = this.pad.signature
     }
     
-    console.log(this.submitFile)
+    // console.log(this.submitFile)
     this.loading = true;
     this.univoxService.uploadFiles(this.submitFile, type).subscribe(
       res => {
-        console.log(res);
+        // console.log(res);
         if (res.length >= 0) {
           this.loading = false;
           this.getRegisterDetails();
@@ -186,7 +188,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
         
       },
       error => {
-        console.log(error);
+        // console.log(error);
         this.loading = false;
         this.notifier.notify('error', error.error);
       }
@@ -225,8 +227,9 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     this.univoxService.getRegisterDetails(user).subscribe(
       res => {
         if (res.nic_no) {
+        
         this.details = res;
-        console.log(this.details)
+        // console.log(this.details)
         this.setDetails()
         } else {
           this.notifier.notify('warning', res.error);
@@ -369,6 +372,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
               //   'Your data has not been recorded!',
               //   'error'
               // )
+              this.authService.doLogout();
             }
           })
           this.getRegisterDetails()
