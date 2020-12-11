@@ -298,7 +298,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
 
   updateDetails() {
     if (!this.isSign) {
-      this.notifier.notify('error', 'Please add your signature!');
+      this.notifier.notify('error', 'Please save your signature!');
       return
     }
     const payload = {
