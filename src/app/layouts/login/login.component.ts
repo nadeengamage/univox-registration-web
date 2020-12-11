@@ -32,6 +32,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (localStorage.getItem('user_details')) {
+      this.router.navigate(['univox/register']);
+    }
   }
 
   loginUser() {
