@@ -872,6 +872,7 @@ ngx-loading .custom-class {
   }
   canvas {
     width: 100% !important;
+    height: 300px !important;
   }
   .document-section .d-inline-flex {
     display: block !important;
@@ -885,4 +886,10 @@ ngx-loading .custom-class {
   .btn-save {
     width: 100% !important;
   }
+}
+
+@media only screen and (max-width: 420px) {
+  .card-body {
+    padding: 5px;
+}
 }
