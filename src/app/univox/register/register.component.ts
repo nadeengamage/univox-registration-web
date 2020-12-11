@@ -170,6 +170,10 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     if (type !== 'signature') {
       this.submitFile = data.target.files[0]
     } else {
+      if (!this.pad.signature) {
+        this.notifier.notify('error', 'No signature found!');
+        return
+      }
       this.submitFile = this.DataURIToBlob(this.pad.signature)
       this.isSign = true
       // submitFile = this.pad.signature
