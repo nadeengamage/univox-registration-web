@@ -37,6 +37,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     signature: null
   };
   submitFile
+  isSign = false
 
   public loading = false;
 
@@ -170,6 +171,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
       this.submitFile = data.target.files[0]
     } else {
       this.submitFile = this.DataURIToBlob(this.pad.signature)
+      this.isSign = true
       // submitFile = this.pad.signature
     }
     
@@ -295,7 +297,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
   }
 
   updateDetails() {
-    if (this.signaturePad.isEmpty()) {
+    if (!this.isSign) {
       this.notifier.notify('error', 'Please add your signature!');
       return
     }
@@ -352,6 +354,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
         res => {
           if (res.nic_no) {
           // this.notifier.notify('success', 'Your details was recorded. Thank you!');
+          this.isSign = false
           Swal.fire({
             title: 'Your details has been recorded!',
             text: 'Do you want to logout?',
