@@ -1,4 +1,9 @@
 <div class="card">
+   <div class="col-md-12">
+      <div class="note">
+      If you are trying to fill data using mobile phone, please be patient to use browser in your desktop to get more experience.
+   </div>
+   </div>
    <div class="card-header">
       <h5 class="card-title">Student Registration</h5>
    </div>
@@ -468,7 +473,7 @@
                <div class="col-md-12">
                <div class="row">
                <div class="col-md-9 outer-signature">
-                  <label>Your Signature (sign here with your original signature)</label>
+                  <label>Your Signature (try to sign here with your original signature)</label>
                   <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
                   <div class="btn btn-danger" (click)="clearSignature()"><i class="fa fa-eraser"></i> Clear Signature</div>&nbsp;
                   <div class="btn btn-warning" (click)="uploadFiles('', 'signature')"><i class="fa fa-save"></i> Save Signature</div>&nbsp;
@@ -511,9 +516,6 @@
                </div>
                
                </form>
-               <div class="col-md-12 note">
-                  If you are trying to fill data using mobile phone, please be patient to use browser in your desktop to get more experience.
-               </div>
             </div>
          </div>
       </div>
