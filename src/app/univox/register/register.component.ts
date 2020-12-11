@@ -17,7 +17,7 @@ declare var $: any;
 })
 export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
   @ViewChild(SignaturePad, {static: false}) signaturePad: SignaturePad;
-  private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
+  public signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
     'minWidth': 2,
     'canvasWidth': 700,
     'canvasHeight': 250,
