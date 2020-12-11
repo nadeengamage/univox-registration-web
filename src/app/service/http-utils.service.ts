@@ -88,7 +88,7 @@ export class HttpUtilsService {
   multiPart(path, body, type, params?): Observable<any> {
     const formData: FormData = new FormData();
     formData.append('files', body);
-    formData.append('ref', 'student');
+    formData.append('ref', 'students');
     formData.append('refId', '1');
     formData.append('field', type);
     return this.httpClient

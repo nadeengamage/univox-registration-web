@@ -35,6 +35,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
   public pad = {
     signature: null
   };
+  submitFile
 
   public loading = false;
 
@@ -147,24 +148,42 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     this.signaturePad.clear();
   }
 
+  DataURIToBlob(dataURI: string) {
+    const splitDataURI = dataURI.split(',')
+    const byteString = splitDataURI[0].indexOf('base64') >= 0 ? atob(splitDataURI[1]) : decodeURI(splitDataURI[1])
+    const mimeString = splitDataURI[0].split(':')[1].split(';')[0]
+
+    const ia = new Uint8Array(byteString.length)
+    for (let i = 0; i < byteString.length; i++)
+        ia[i] = byteString.charCodeAt(i)
+
+    return new Blob([ia], { type: mimeString })
+  }
+
   uploadFiles(data, type) {
     // uploadFiles
 
-    let submitFile = null
+    this.submitFile = null
     if (type !== 'signature') {
-      submitFile = data.target.files[0]
+      this.submitFile = data.target.files[0]
     } else {
-      submitFile = this.pad.signature
+      this.submitFile = this.DataURIToBlob(this.pad.signature)
+      // submitFile = this.pad.signature
     }
     
-    console.log(submitFile)
+    console.log(this.submitFile)
     this.loading = true;
-    this.univoxService.uploadFiles(submitFile, type).subscribe(
+    this.univoxService.uploadFiles(this.submitFile, type).subscribe(
       res => {
         console.log(res);
-        this.loading = false;
-        this.getRegisterDetails();
-        this.notifier.notify('success', res.message);
+        if (res.length >= 0) {
+          this.loading = false;
+          this.getRegisterDetails();
+          this.notifier.notify('success', 'Document upload success!');
+        } else {
+          this.notifier.notify('error', 'Something wrong...');
+        }
+        
       },
       error => {
         console.log(error);
