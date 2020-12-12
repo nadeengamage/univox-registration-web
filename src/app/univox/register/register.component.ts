@@ -245,12 +245,12 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
         
         this.setDetails()
         } else {
-          this.notifier.notify('warning', res.error);
+          this.notifier.notify('error', 'Details not found!');
         }
         this.loading = false;
       },
       error => {
-        this.notifier.notify('warning', error.error);
+        this.notifier.notify('error', 'Something wrong!');
         this.loading = false;
       }
     );
