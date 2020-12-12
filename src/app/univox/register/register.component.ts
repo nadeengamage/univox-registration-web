@@ -131,9 +131,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
       icon: 'warning',
       width: 1000,
       html:
-        'You can use <b>bold text</b>, ' +
-        '<a href="//sweetalert2.github.io">links</a> ' +
-        'and other HTML tags',
+        'The system does not allow to login again after submit your details. Please be patient to submit your correct details on first try!',
       showCloseButton: true,
       showCancelButton: false,
       focusConfirm: false,
