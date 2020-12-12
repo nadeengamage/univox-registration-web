@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
     }
     this.univoxService.authenticateUser(data).subscribe(
       res => {
+        if (res.user.updated_at) {
         if (res.jwt) {
           localStorage.setItem('access_token', res.jwt);
           localStorage.setItem('user_details', window.btoa(JSON.stringify(this.signinForm.value.username)));
@@ -54,6 +55,9 @@ export class LoginComponent implements OnInit {
         } else {
           this.notifier.notify('error', 'Authentication failed!');
         }
+      } else {
+        this.notifier.notify('error', 'Sorry! You are already up to date.');
+      }
         this.loading = false;
       },
       error => {
