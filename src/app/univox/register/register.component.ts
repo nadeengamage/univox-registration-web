@@ -111,27 +111,28 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     //   pageLength: 10,
     //   responsive: true
     // };
-    // this.canUserAdd = this.userPermissionService.isUserAdd(
-    //   this.userDetailsService.getRequestInfo()
-    // );
-    // this.canUserEdit = this.userPermissionService.isUserEdit(
-    //   this.userDetailsService.getRequestInfo()
-    // );
-    // this.canUserDelete = this.userPermissionService.isUserDelete(
-    //   this.userDetailsService.getRequestInfo()
-    // );
-    // this.getAllUsers();
     this.details = null;
     this.getRegisterDetails()
     Swal.fire({
       // 'Attention!',
       // 'This is system genarated. The system does not allow to login again after submit your details. Please be patient to submit your correct details on first try!',
       // 'warning',
-      title: '<strong>This is system genarated.</strong>',
+      title: '<strong>Welcome to UnivoX Student Registration System!</strong>',
       icon: 'warning',
       width: 1000,
       html:
-        'The system does not allow to login again after submit your details. Please be patient to submit your correct details on first try!',
+        '<div class="privacy"><p>Please kindly read the below instructions.</p>' +
+        '<p class="oneatmpt">Your NIC number will only have one attempt to complete this registration form.</p>' +
+        '<hr>' +
+        '<span><b>Instructions to Students</b></span>' +
+        '<ul><li>You will have only one attempt to complete this registration.</li>' +
+        '<li>All the fields highlighted in gray color and are disabled, cannot be edited.</li>' +
+        '<li>Any filed that is enabled must be filed with appropriate details and some are compulsory.</li>' +
+        '<li>When you upload your certificate images kindly use moderate size clear images.</li>' +
+        '<li>Please use digital signature area to sign the document or upload a clear photo of your signature.</li>' +
+        '<li>After you successfully submit the form you will be logged out and a registration confirmation email will be sent to your personal email address.</li>' +
+        '</ul>' + 
+        '<p class="tks">Thank You,<br>University of Vocational Technology.</p></div>',
       showCloseButton: true,
       showCancelButton: false,
       focusConfirm: false,

@@ -834,6 +834,26 @@ ngx-loading .custom-class {
   background-color: #29a93e !important;
   font-size: 13px !important;
 }
+.swal2-title {
+  font-size: 16px !important;
+}
+.privacy {
+  font-size: 15px;
+}
+.privacy p {
+  margin-bottom: 5px;
+}
+.privacy ul {
+  text-align: left;
+  font-size: 12px;
+}
+.privacy .oneatmpt {
+  background-color: #ffd0d0;
+}
+.privacy .tks {
+  text-align: right;
+  font-size: 12px;
+}
 
 @media only screen and (max-width: 769px) {
   .container-fluid {
