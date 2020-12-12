@@ -123,10 +123,27 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     // this.getAllUsers();
     this.details = null;
     this.getRegisterDetails()
-    Swal.fire(
-      'Attention!',
-      'This is system genarated. The system does not allow to login again after submit your details. Please be patient to submit your correct details on first try!',
-      'warning'
+    Swal.fire({
+      // 'Attention!',
+      // 'This is system genarated. The system does not allow to login again after submit your details. Please be patient to submit your correct details on first try!',
+      // 'warning',
+      title: '<strong>This is system genarated.</strong>',
+      icon: 'warning',
+      width: 1000,
+      html:
+        'You can use <b>bold text</b>, ' +
+        '<a href="//sweetalert2.github.io">links</a> ' +
+        'and other HTML tags',
+      showCloseButton: true,
+      showCancelButton: false,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> OK!',
+      confirmButtonAriaLabel: 'Thumbs up, OK!',
+      cancelButtonText:
+        '<i class="fa fa-thumbs-down"></i>',
+      cancelButtonAriaLabel: 'Thumbs down'
+    }
     )
   }
 
