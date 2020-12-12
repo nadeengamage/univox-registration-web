@@ -12,6 +12,8 @@ export class UnivoxService {
   private createDetailsEndPoint: string;
   private uploadFileEndPoint: string;
   private authenticateEndPoint: string;
+  private getStreamEndPoint: string;
+  private getSubjectEndPoint: string;
 
   constructor(private http: HttpUtilsService) {
 
@@ -20,6 +22,8 @@ export class UnivoxService {
     this.createDetailsEndPoint = this.baseUrl + '/students/{id}';
     this.uploadFileEndPoint = this.baseUrl + '/upload';
     this.authenticateEndPoint = this.baseUrl + '/auth/local';
+    this.getStreamEndPoint = this.baseUrl + '/streams';
+    this.getSubjectEndPoint = this.baseUrl + '/subject/1';
   }
 
   ///////////
@@ -42,5 +46,9 @@ export class UnivoxService {
   public uploadFiles(data, type) {
     const upload = this.uploadFileEndPoint;
     return this.http.multiPart(upload, data, type);
+  }
+  public getStream() {
+    const stream = this.getStreamEndPoint;
+    return this.http.get(stream);
   }
 }

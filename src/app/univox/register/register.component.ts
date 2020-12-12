@@ -39,6 +39,95 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
   };
   submitFile
   isSign = false
+  // subject_keyword = 'subject_name';
+  // stream_keyword = 'stream_name';
+  common_keyword = 'name';
+  streams = [
+    {
+      id: 1,
+      name: 'STREAM 1'
+    },
+    {
+      id: 2,
+      name: 'STREAM 2'
+    },
+  ]
+  public subjects = [
+    {
+      id: 1,
+      name: 'SUBJECT 1'
+    },
+    {
+      id: 2,
+      name: 'SUBJECT 2'
+    },
+  ];
+  public grades = [
+    {
+      id: 1,
+      name: 'GRADE A'
+    },
+    {
+      id: 2,
+      name: 'GRADE B'
+    },
+    {
+      id: 3,
+      name: 'GRADE C'
+    },
+    {
+      id: 4,
+      name: 'GRADE S'
+    },
+    {
+      id: 5,
+      name: 'GRADE F'
+    },
+    {
+      id: 6,
+      name: 'AB'
+    }
+ ];
+ public nation = [
+  {
+    id: 1,
+    name: 'SRILANKA'
+  },
+  {
+    id: 2,
+    name: 'OTHER'
+  }
+];
+ public district = [
+  {
+    id: 1,
+    name: 'COLOMBO'
+  },
+  {
+    id: 2,
+    name: 'KANDY'
+  }
+];
+public year = [
+  {
+    id: 1,
+    name: '2020'
+  },
+  {
+    id: 2,
+    name: '2019'
+  }
+];
+public alattemt = [
+  {
+    id: 1,
+    name: '1'
+  },
+  {
+    id: 2,
+    name: '2'
+  }
+];
 
   public loading = false;
 
@@ -173,8 +262,36 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     this.signaturePad.clear();
   }
 
+  selectEvent(item) {
+    // do something with selected item
+  }
+ 
+  onChangeSearch(val: string) {
+    // fetch remote data from here
+    // And reassign the 'data' which is binded to 'data' property.
+  }
+  
+  onFocused(e){
+    // do something when input is focused
+  }
+
   canSignature(status) {
-this.isSignature = status
+    this.isSignature = status
+  }
+
+  getStreamList() {
+    this.univoxService.getStream().subscribe(
+      res => {
+        console.log(res);
+        this.streams = res
+        
+      },
+      error => {
+        // console.log(error);
+        this.loading = false;
+        this.notifier.notify('error', 'Something went wrong!');
+      }
+    );
   }
 
   DataURIToBlob(dataURI: string) {
@@ -226,7 +343,7 @@ this.isSignature = status
       error => {
         // console.log(error);
         this.loading = false;
-        this.notifier.notify('error', error.error);
+        this.notifier.notify('error', 'Something went wrong!');
       }
     );
   }
@@ -266,6 +383,7 @@ this.isSignature = status
         
         this.details = res;
         // console.log(this.details)
+        // this.getStreamList()
         
         this.setDetails()
         } else {

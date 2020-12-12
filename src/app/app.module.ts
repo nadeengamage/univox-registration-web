@@ -15,11 +15,11 @@ import { LoginComponent } from './layouts/login/login.component';
 import { FooterComponent } from './layouts/full-layout/footer/footer.component';
 import { SideMenuComponent } from './univox/side-menu/side-menu.component';
 import { UnivoxComponent } from './univox/univox.component';
-import { RegisterComponent } from './univox/register/register.component';
+// import { RegisterComponent } from './univox/register/register.component';
+import { RegisterModule } from './univox/register/register.module';
 import { UserDetailsService } from './service/user-details-service';
 import { DataTablesModule } from 'angular-datatables';
 import { NoRightClickDirective } from './service/no-right-click.directive';
-import { SignaturePadModule } from 'angular2-signaturepad';
 
 const customNotifierOptions: NotifierOptions = {
   position: {
@@ -71,8 +71,7 @@ const customNotifierOptions: NotifierOptions = {
     LoginComponent,
     FooterComponent,
     SideMenuComponent,
-    UnivoxComponent,
-    RegisterComponent
+    UnivoxComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +80,7 @@ const customNotifierOptions: NotifierOptions = {
     ReactiveFormsModule,
     HttpClientModule,
     DataTablesModule,
-    SignaturePadModule,
+    RegisterModule,
     NgxLoadingModule.forRoot({
       animationType: ngxLoadingAnimationTypes.wanderingCubes,
       backdropBackgroundColour: 'rgba(0,0,0,0.5)',

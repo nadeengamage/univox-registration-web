@@ -119,7 +119,7 @@
                   </div>
                   <div class="form-group col-md-4">
                      <label>Nic issue date</label>
-                     <input title="Yout NIC issue date." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="issueNic"
+                     <input title="Yout NIC issue date." type="date" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="issueNic"
                         [ngClass]="submitted || isInvalidField('issueNic') ? 'error-field' : ''">
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('issueNic')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.issueNic.errors?.required">
@@ -169,8 +169,28 @@
                   </div>
                   <div class="form-group col-md-4">
                      <label>Nationality</label>
-                     <input title="Enter nationality." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="nationality"
-                        [ngClass]="submitted || isInvalidField('nationality') ? 'error-field' : ''">
+                     <!-- <input title="Enter nationality." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="nationality"
+                        [ngClass]="submitted || isInvalidField('nationality') ? 'error-field' : ''"> -->
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete 
+                             [data]="nation"
+                             [searchKeyword]="common_keyword"
+                             (selected)='selectEvent($event)'
+                             (inputChanged)='onChangeSearch($event)'
+                             (inputFocused)='onFocused($event)'
+                             [itemTemplate]="itemTemplate"
+                             formControlName="nationality"
+                             [notFoundTemplate]="notFoundTemplate">                                 
+                           </ng-autocomplete>
+                            
+                           <ng-template #itemTemplate let-item>
+                           <a [innerHTML]="item.name"></a>
+                           </ng-template>
+                            
+                           <ng-template #notFoundTemplate let-notFound>
+                           <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                           </div>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('nationality')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.nationality.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -192,8 +212,28 @@
                <div class="row">
                   <div class="form-group col-md-4">
                      <label>District of residence</label>
-                     <input title="Enter district of residence." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="district"
-                        [ngClass]="submitted || isInvalidField('district') ? 'error-field' : ''">
+                     <!-- <input title="Enter district of residence." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="district"
+                        [ngClass]="submitted || isInvalidField('district') ? 'error-field' : ''"> -->
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete 
+                             [data]="district"
+                             [searchKeyword]="common_keyword"
+                             (selected)='selectEvent($event)'
+                             (inputChanged)='onChangeSearch($event)'
+                             (inputFocused)='onFocused($event)'
+                             [itemTemplate]="itemTemplate"
+                             formControlName="district"
+                             [notFoundTemplate]="notFoundTemplate">                                 
+                           </ng-autocomplete>
+                            
+                           <ng-template #itemTemplate let-item>
+                           <a [innerHTML]="item.name"></a>
+                           </ng-template>
+                            
+                           <ng-template #notFoundTemplate let-notFound>
+                           <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                           </div>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('district')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.district.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -247,8 +287,28 @@
                   </div>
                   <div class="form-group col-md-4">
                      <label>Year</label>
-                     <input title="Enter A/L year." type="number" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="year"
-                        [ngClass]="submitted || isInvalidField('year') ? 'error-field' : ''">
+                     <!-- <input title="Enter A/L year." type="number" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="year"
+                        [ngClass]="submitted || isInvalidField('year') ? 'error-field' : ''"> -->
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete 
+                             [data]="year"
+                             [searchKeyword]="common_keyword"
+                             (selected)='selectEvent($event)'
+                             (inputChanged)='onChangeSearch($event)'
+                             (inputFocused)='onFocused($event)'
+                             [itemTemplate]="itemTemplate"
+                             formControlName="year"
+                             [notFoundTemplate]="notFoundTemplate">                                 
+                           </ng-autocomplete>
+                            
+                           <ng-template #itemTemplate let-item>
+                           <a [innerHTML]="item.name"></a>
+                           </ng-template>
+                            
+                           <ng-template #notFoundTemplate let-notFound>
+                           <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                           </div>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('year')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.year.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -269,8 +329,28 @@
                <div class="row">
                   <div class="form-group col-md-4">
                      <label>Attempt</label>
-                     <input title="Enter attempt." type="number" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="attempt"
-                        [ngClass]="submitted || isInvalidField('attempt') ? 'error-field' : ''">
+                     <!-- <input title="Enter attempt." type="number" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="attempt"
+                        [ngClass]="submitted || isInvalidField('attempt') ? 'error-field' : ''"> -->
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete 
+                             [data]="alattemt"
+                             [searchKeyword]="common_keyword"
+                             (selected)='selectEvent($event)'
+                             (inputChanged)='onChangeSearch($event)'
+                             (inputFocused)='onFocused($event)'
+                             [itemTemplate]="itemTemplate"
+                             formControlName="attempt"
+                             [notFoundTemplate]="notFoundTemplate">                                 
+                           </ng-autocomplete>
+                            
+                           <ng-template #itemTemplate let-item>
+                           <a [innerHTML]="item.name"></a>
+                           </ng-template>
+                            
+                           <ng-template #notFoundTemplate let-notFound>
+                           <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                           </div>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('attempt')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.attempt.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -279,8 +359,28 @@
                   </div>
                   <div class="form-group col-md-4">
                      <label>Stream</label>
-                     <input title="Enter stream." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="stream"
-                        [ngClass]="submitted || isInvalidField('stream') ? 'error-field' : ''">
+                     <!-- <input title="Enter stream." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="stream"
+                        [ngClass]="submitted || isInvalidField('stream') ? 'error-field' : ''"> -->
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete 
+                             [data]="streams"
+                             [searchKeyword]="common_keyword"
+                             (selected)='selectEvent($event)'
+                             (inputChanged)='onChangeSearch($event)'
+                             (inputFocused)='onFocused($event)'
+                             [itemTemplate]="itemTemplate"
+                             formControlName="stream"
+                             [notFoundTemplate]="notFoundTemplate">                                 
+                           </ng-autocomplete>
+                            
+                           <ng-template #itemTemplate let-item>
+                           <a [innerHTML]="item.name"></a>
+                           </ng-template>
+                            
+                           <ng-template #notFoundTemplate let-notFound>
+                           <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                           </div>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('stream')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.stream.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -300,8 +400,28 @@
                      <tbody>
                         <tr>
                            <td>
-                              <input title="Enter subject." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="subject1"
-                        [ngClass]="submitted || isInvalidField('subject1') ? 'error-field' : ''">
+                              <!-- <input title="Enter subject." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="subject1"
+                        [ngClass]="submitted || isInvalidField('subject1') ? 'error-field' : ''"> -->
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete 
+                             [data]="subjects"
+                             [searchKeyword]="common_keyword"
+                             (selected)='selectEvent($event)'
+                             (inputChanged)='onChangeSearch($event)'
+                             (inputFocused)='onFocused($event)'
+                             [itemTemplate]="itemTemplate"
+                             formControlName="subject1"
+                             [notFoundTemplate]="notFoundTemplate">                                 
+                           </ng-autocomplete>
+                            
+                           <ng-template #itemTemplate let-item>
+                           <a [innerHTML]="item.name"></a>
+                           </ng-template>
+                            
+                           <ng-template #notFoundTemplate let-notFound>
+                           <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                           </div>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('subject1')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.subject1.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -309,8 +429,28 @@
                      </div>
                            </td>
                            <td>
-                              <input title="Enter grade." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="grade1"
-                        [ngClass]="submitted || isInvalidField('grade1') ? 'error-field' : ''">
+                              <!-- <input title="Enter grade." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="grade1"
+                        [ngClass]="submitted || isInvalidField('grade1') ? 'error-field' : ''"> -->
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete 
+                             [data]="grades"
+                             [searchKeyword]="common_keyword"
+                             (selected)='selectEvent($event)'
+                             (inputChanged)='onChangeSearch($event)'
+                             (inputFocused)='onFocused($event)'
+                             [itemTemplate]="itemTemplate"
+                             formControlName="grade1"
+                             [notFoundTemplate]="notFoundTemplate">                                 
+                           </ng-autocomplete>
+                            
+                           <ng-template #itemTemplate let-item>
+                           <a [innerHTML]="item.name"></a>
+                           </ng-template>
+                            
+                           <ng-template #notFoundTemplate let-notFound>
+                           <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                           </div>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('grade1')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.grade1.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -320,8 +460,28 @@
                         </tr>
                         <tr>
                            <td>
-                              <input title="Enter subject." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="subject2"
-                        [ngClass]="submitted || isInvalidField('subject2') ? 'error-field' : ''">
+                              <!-- <input title="Enter subject." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="subject2"
+                        [ngClass]="submitted || isInvalidField('subject2') ? 'error-field' : ''"> -->
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete 
+                             [data]="subjects"
+                             [searchKeyword]="common_keyword"
+                             (selected)='selectEvent($event)'
+                             (inputChanged)='onChangeSearch($event)'
+                             (inputFocused)='onFocused($event)'
+                             [itemTemplate]="itemTemplate"
+                             formControlName="subject2"
+                             [notFoundTemplate]="notFoundTemplate">                                 
+                           </ng-autocomplete>
+                            
+                           <ng-template #itemTemplate let-item>
+                           <a [innerHTML]="item.name"></a>
+                           </ng-template>
+                            
+                           <ng-template #notFoundTemplate let-notFound>
+                           <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                           </div>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('subject2')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.subject2.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -329,8 +489,28 @@
                      </div>
                            </td>
                            <td>
-                              <input title="Enter grade." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="grade2"
-                        [ngClass]="submitted || isInvalidField('grade2') ? 'error-field' : ''">
+                              <!-- <input title="Enter grade." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="grade2"
+                        [ngClass]="submitted || isInvalidField('grade2') ? 'error-field' : ''"> -->
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete 
+                             [data]="grades"
+                             [searchKeyword]="common_keyword"
+                             (selected)='selectEvent($event)'
+                             (inputChanged)='onChangeSearch($event)'
+                             (inputFocused)='onFocused($event)'
+                             [itemTemplate]="itemTemplate"
+                             formControlName="grade2"
+                             [notFoundTemplate]="notFoundTemplate">                                 
+                           </ng-autocomplete>
+                            
+                           <ng-template #itemTemplate let-item>
+                           <a [innerHTML]="item.name"></a>
+                           </ng-template>
+                            
+                           <ng-template #notFoundTemplate let-notFound>
+                           <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                           </div>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('grade2')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.grade2.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -340,8 +520,28 @@
                         </tr>
                         <tr>
                            <td>
-                              <input title="Enter subject." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="subject3"
-                        [ngClass]="submitted || isInvalidField('subject3') ? 'error-field' : ''">
+                              <!-- <input title="Enter subject." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="subject3"
+                        [ngClass]="submitted || isInvalidField('subject3') ? 'error-field' : ''"> -->
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete 
+                             [data]="subjects"
+                             [searchKeyword]="common_keyword"
+                             (selected)='selectEvent($event)'
+                             (inputChanged)='onChangeSearch($event)'
+                             (inputFocused)='onFocused($event)'
+                             [itemTemplate]="itemTemplate"
+                             formControlName="subject3"
+                             [notFoundTemplate]="notFoundTemplate">                                 
+                           </ng-autocomplete>
+                            
+                           <ng-template #itemTemplate let-item>
+                           <a [innerHTML]="item.name"></a>
+                           </ng-template>
+                            
+                           <ng-template #notFoundTemplate let-notFound>
+                           <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                           </div>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('subject3')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.subject3.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -349,8 +549,28 @@
                      </div>
                            </td>
                            <td>
-                              <input title="Enter grade." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="grade3"
-                        [ngClass]="submitted || isInvalidField('grade3') ? 'error-field' : ''">
+                              <!-- <input title="Enter grade." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="grade3"
+                        [ngClass]="submitted || isInvalidField('grade3') ? 'error-field' : ''"> -->
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete 
+                             [data]="grades"
+                             [searchKeyword]="common_keyword"
+                             (selected)='selectEvent($event)'
+                             (inputChanged)='onChangeSearch($event)'
+                             (inputFocused)='onFocused($event)'
+                             [itemTemplate]="itemTemplate"
+                             formControlName="grade3"
+                             [notFoundTemplate]="notFoundTemplate">                                 
+                           </ng-autocomplete>
+                            
+                           <ng-template #itemTemplate let-item>
+                           <a [innerHTML]="item.name"></a>
+                           </ng-template>
+                            
+                           <ng-template #notFoundTemplate let-notFound>
+                           <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                           </div>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('grade3')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.grade3.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -360,8 +580,28 @@
                         </tr>
                         <tr>
                            <td>
-                              <input title="Enter subject." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="subject4"
-                        [ngClass]="submitted || isInvalidField('subject4') ? 'error-field' : ''">
+                              <!-- <input title="Enter subject." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="subject4"
+                        [ngClass]="submitted || isInvalidField('subject4') ? 'error-field' : ''"> -->
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete 
+                             [data]="subjects"
+                             [searchKeyword]="common_keyword"
+                             (selected)='selectEvent($event)'
+                             (inputChanged)='onChangeSearch($event)'
+                             (inputFocused)='onFocused($event)'
+                             [itemTemplate]="itemTemplate"
+                             formControlName="subject4"
+                             [notFoundTemplate]="notFoundTemplate">                                 
+                           </ng-autocomplete>
+                            
+                           <ng-template #itemTemplate let-item>
+                           <a [innerHTML]="item.name"></a>
+                           </ng-template>
+                            
+                           <ng-template #notFoundTemplate let-notFound>
+                           <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                           </div>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('subject4')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.subject4.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -369,8 +609,28 @@
                      </div>
                            </td>
                            <td>
-                              <input title="Enter grade." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="grade4"
-                        [ngClass]="submitted || isInvalidField('grade4') ? 'error-field' : ''">
+                              <!-- <input title="Enter grade." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="grade4"
+                        [ngClass]="submitted || isInvalidField('grade4') ? 'error-field' : ''"> -->
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete 
+                             [data]="grades"
+                             [searchKeyword]="common_keyword"
+                             (selected)='selectEvent($event)'
+                             (inputChanged)='onChangeSearch($event)'
+                             (inputFocused)='onFocused($event)'
+                             [itemTemplate]="itemTemplate"
+                             formControlName="grade4"
+                             [notFoundTemplate]="notFoundTemplate">                                 
+                           </ng-autocomplete>
+                            
+                           <ng-template #itemTemplate let-item>
+                           <a [innerHTML]="item.name"></a>
+                           </ng-template>
+                            
+                           <ng-template #notFoundTemplate let-notFound>
+                           <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                           </div>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('grade4')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.grade4.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -380,8 +640,28 @@
                         </tr>
                         <tr>
                            <td>
-                              <input title="Enter subject." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="subject5"
-                        [ngClass]="submitted || isInvalidField('subject5') ? 'error-field' : ''">
+                              <!-- <input title="Enter subject." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="subject5"
+                        [ngClass]="submitted || isInvalidField('subject5') ? 'error-field' : ''"> -->
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete 
+                             [data]="subjects"
+                             [searchKeyword]="common_keyword"
+                             (selected)='selectEvent($event)'
+                             (inputChanged)='onChangeSearch($event)'
+                             (inputFocused)='onFocused($event)'
+                             [itemTemplate]="itemTemplate"
+                             formControlName="subject5"
+                             [notFoundTemplate]="notFoundTemplate">                                 
+                           </ng-autocomplete>
+                            
+                           <ng-template #itemTemplate let-item>
+                           <a [innerHTML]="item.name"></a>
+                           </ng-template>
+                            
+                           <ng-template #notFoundTemplate let-notFound>
+                           <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                           </div>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('subject5')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.subject5.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -389,8 +669,28 @@
                      </div>
                            </td>
                            <td>
-                              <input title="Enter grade." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="grade5"
-                        [ngClass]="submitted || isInvalidField('grade5') ? 'error-field' : ''">
+                              <!-- <input title="Enter grade." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="grade5"
+                        [ngClass]="submitted || isInvalidField('grade5') ? 'error-field' : ''"> -->
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete 
+                             [data]="grades"
+                             [searchKeyword]="common_keyword"
+                             (selected)='selectEvent($event)'
+                             (inputChanged)='onChangeSearch($event)'
+                             (inputFocused)='onFocused($event)'
+                             [itemTemplate]="itemTemplate"
+                             formControlName="grade5"
+                             [notFoundTemplate]="notFoundTemplate">                                 
+                           </ng-autocomplete>
+                            
+                           <ng-template #itemTemplate let-item>
+                           <a [innerHTML]="item.name"></a>
+                           </ng-template>
+                            
+                           <ng-template #notFoundTemplate let-notFound>
+                           <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                           </div>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('grade5')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.grade5.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -400,8 +700,28 @@
                         </tr>
                         <tr>
                            <td>
-                              <input title="Enter subject." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="subject6"
-                        [ngClass]="submitted || isInvalidField('subject6') ? 'error-field' : ''">
+                              <!-- <input title="Enter subject." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="subject6"
+                        [ngClass]="submitted || isInvalidField('subject6') ? 'error-field' : ''"> -->
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete 
+                             [data]="subjects"
+                             [searchKeyword]="common_keyword"
+                             (selected)='selectEvent($event)'
+                             (inputChanged)='onChangeSearch($event)'
+                             (inputFocused)='onFocused($event)'
+                             [itemTemplate]="itemTemplate"
+                             formControlName="subject6"
+                             [notFoundTemplate]="notFoundTemplate">                                 
+                           </ng-autocomplete>
+                            
+                           <ng-template #itemTemplate let-item>
+                           <a [innerHTML]="item.name"></a>
+                           </ng-template>
+                            
+                           <ng-template #notFoundTemplate let-notFound>
+                           <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                           </div>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('subject6')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.subject6.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -409,8 +729,28 @@
                      </div>
                            </td>
                            <td>
-                              <input title="Enter grade." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="grade6"
-                        [ngClass]="submitted || isInvalidField('grade6') ? 'error-field' : ''">
+                              <!-- <input title="Enter grade." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="grade6"
+                        [ngClass]="submitted || isInvalidField('grade6') ? 'error-field' : ''"> -->
+                        <div class="ng-autocomplete">
+                           <ng-autocomplete 
+                             [data]="grades"
+                             [searchKeyword]="common_keyword"
+                             (selected)='selectEvent($event)'
+                             (inputChanged)='onChangeSearch($event)'
+                             (inputFocused)='onFocused($event)'
+                             [itemTemplate]="itemTemplate"
+                             formControlName="grade6"
+                             [notFoundTemplate]="notFoundTemplate">                                 
+                           </ng-autocomplete>
+                            
+                           <ng-template #itemTemplate let-item>
+                           <a [innerHTML]="item.name"></a>
+                           </ng-template>
+                            
+                           <ng-template #notFoundTemplate let-notFound>
+                           <div [innerHTML]="notFound"></div>
+                           </ng-template>
+                           </div>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('grade6')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.grade6.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
