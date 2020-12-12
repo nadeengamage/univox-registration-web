@@ -122,6 +122,11 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     // this.getAllUsers();
     this.details = null;
     this.getRegisterDetails()
+    Swal.fire(
+      'Attention!',
+      'This is system genarated. The system does not allow to login again after submit your details. Please be patient to submit your correct details on first try!',
+      'warning'
+    )
   }
 
   ngOnDestroy() {
@@ -237,6 +242,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
         
         this.details = res;
         // console.log(this.details)
+        
         this.setDetails()
         } else {
           this.notifier.notify('warning', res.error);
