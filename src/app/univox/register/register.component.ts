@@ -78,7 +78,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
       religion: [''],
       district: ['', Validators.required],
       kmFromAddress: ['', Validators.required],
-      kmFromWork: ['', Validators.required],
+      kmFromWork: [''],
       indexNo: ['', Validators.required],
       year: ['', Validators.required],
       zscore: ['', Validators.required],
@@ -127,7 +127,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
         '<span><b>Instructions to Students</b></span>' +
         '<ul><li>You will have only one attempt to complete this registration.</li>' +
         '<li>All the fields highlighted in gray color and are disabled, cannot be edited.</li>' +
-        '<li>Any filed that is enabled must be filed with appropriate details and some are compulsory.</li>' +
+        '<li>Any filed that is enabled must be fill with appropriate details and some are compulsory.</li>' +
         '<li>When you upload your certificate images kindly use moderate size clear images.</li>' +
         '<li>Please use digital signature area to sign the document or upload a clear photo of your signature.</li>' +
         '<li>After you successfully submit the form you will be logged out and a registration confirmation email will be sent to your personal email address.</li>' +

@@ -215,7 +215,7 @@
                      </div>
                   </div>
                </div>
-               <div class="row">
+               <!-- <div class="row">
                   <div class="form-group col-md-5">
                      <label>Distance in km to the university from place of work</label>
                   </div>
@@ -228,7 +228,7 @@
                         </span>
                      </div>
                   </div>
-               </div>
+               </div> -->
                <hr>
                <div class="row">
                   <div class="form-group col-md-12">
@@ -451,7 +451,7 @@
                </div>
                <div class="row" *ngIf="registrationForm.controls.presentEducation.value == true">
                   <div class="form-group col-md-6">
-                     <label>if yes, name of the institute and course:</label>
+                     <label>If yes, name of the institute and course:</label>
                      <input title="Enter institute." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="isPresentInstitute"
                         [ngClass]="submitted || isInvalidField('isPresentInstitute') ? 'error-field' : ''">
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('isPresentInstitute')">
