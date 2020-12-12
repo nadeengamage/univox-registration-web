@@ -181,6 +181,7 @@ this.isSignature = status
       this.submitFile = data.target.files[0]
     } else if (diff && type === 'signature') {
       this.submitFile = data.target.files[0]
+      this.isSign = true
     } else {
       if (!this.pad.signature) {
         this.notifier.notify('error', 'No signature found!');
@@ -366,7 +367,6 @@ this.isSignature = status
       distance_to_address: this.registrationForm.value.kmFromAddress,
       distance_work: this.registrationForm.value.kmFromWork
   }
-  console.log(payload.full_name)
     if (!this.registrationForm.invalid) {
       this.loading = true;
       this.univoxService.saveData(payload, this.registrationForm.value.id).subscribe(
