@@ -53,14 +53,13 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     },
   ]
   public subjects = [
-    {
-      id: 1,
-      name: 'SUBJECT 1'
-    },
-    {
-      id: 2,
-      name: 'SUBJECT 2'
-    },
+    {id: 1,name: 'Physics'},{id: 2,name: 'Chemistry'},{id: 3,name: 'Mathematics'},{id: 4,name: 'Agricultural Science'},{id: 5,name: 'Biology'},{id: 6,name: 'Combined Mathematics'},{id: 7,name: 'Higher Mathematics'},{id: 8,name: 'Common General Test'},{id: 9,name: 'General English'},
+    {id: 10,name: 'Civil Technology'},{id: 11,name: 'Mechanical Technology'},{id: 12,name: 'Electrical, Electronic and Information Technology'},{id: 13,name: 'Food Technology'},{id: 14,name: 'Agriculture Technology'},{id: 15,name: 'Bio Resource Technology'},{id: 16,name: 'Information & Communication Technology'},{id: 17,name: 'Economics'},{id: 18,name: 'Geography'},{id: 19,name: 'Political Science'},
+    {id: 20,name: 'Logic and Scientific Method'},{id: 21,name: 'History of Sri Lanka'},{id: 22,name: 'History of India'},{id: 23,name: 'History of Europe'},{id: 24,name: 'Modern World History'},{id: 25,name: 'Home Economics'},{id: 26,name: 'Communication & Media Studies'},{id: 27,name: 'Business Statistics'},{id: 28,name: 'Business Studies'},{id: 29,name: 'Accountancy'},
+    {id: 30,name: 'Buddhism'},{id: 31,name: 'Hinduism'},{id: 32,name: 'Christianity'},{id: 33,name: 'Islam'},{id: 34,name: 'Buddhist Civilization'},{id: 35,name: 'Hindu Civilization'},{id: 36,name: 'Islam Civilization'},{id: 37,name: 'Greek and Roman Civilization'},{id: 38,name: 'Christian Civilization'},{id: 39,name: 'Art'},
+    {id: 40,name: 'Dancing (Indigenous)'},{id: 41,name: 'Dancing (Bharatha)	'},{id: 42,name: 'Music (Oriental)'},{id: 43,name: 'Music (Carnatic)'},{id: 44,name: 'Music (Western)'},{id: 45,name: 'Drama and Theatre (Sinhala)'},{id: 46,name: 'Drama and Theatre (Tamil)'},{id: 47,name: 'Drama and Theatre (English) '},{id: 48,name: 'Engineering Technology	'},{id: 49,name: 'Biosystems Technology'},
+    {id: 50,name: 'Science for Technology'},{id: 51,name: 'Sinhala'},{id: 52,name: 'Tamil'},{id: 53,name: 'English'},{id: 54,name: 'Pali'},{id: 55,name: 'Sanskrit'},{id: 56,name: 'Arabic'},{id: 57,name: 'Malay'},{id: 58,name: 'French'},{id: 59,name: 'German'},
+    {id: 60,name: 'Russian'},{id: 61,name: 'Hindi'},{id: 62,name: 'Chinese'},{id: 63,name: 'Japanese'},
   ];
   public grades = [
     {
@@ -82,10 +81,6 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     {
       id: 5,
       name: 'GRADE F'
-    },
-    {
-      id: 6,
-      name: 'AB'
     }
  ];
  public nation = [

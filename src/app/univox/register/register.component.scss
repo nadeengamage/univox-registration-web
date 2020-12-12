@@ -46,6 +46,9 @@
     color: #fff;
     display: inline-block;
 }
+.note-2 .emr a {
+    color: #b1ffdb;
+}
 .sign-section {
     padding: 10px 0;
 }
@@ -75,8 +78,3 @@
 .ng-autocomplete input {
     font-size: 12px !important;
 }
-::ng-autocomplete .autocomplete-container .input-container input {
-    font-size: 14px;
-    padding: 0 6px;
-    height: 25px;
-    }
