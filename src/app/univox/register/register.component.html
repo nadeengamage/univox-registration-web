@@ -475,32 +475,54 @@
                </div>
 
                <div class="col-md-12">
+                  <div class="row sign-section">
+                     <div class="custom-control custom-radio">
+                        <input id="sign" type="radio" class="custom-control-input" checked name="isSignature" (click)="canSignature(false)">
+                        <label class="custom-control-label" for="sign">Sign with signature pad</label>
+                     </div>
+                     <div class="custom-control custom-radio">
+                        <input id="ups" type="radio" class="custom-control-input" name="isSignature" (click)="canSignature(true)">
+                        <label class="custom-control-label" for="ups">Upload signature</label>
+                     </div>
+                  </div>
                <div class="row">
-               <div class="col-md-9 outer-signature">
+               <div class="col-md-9 outer-signature" *ngIf="!isSignature">
                   <label>Your Signature (try to sign here with your original signature)</label>
                   <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>
+                  <div class="col-md-12">
                   <div class="btn btn-danger" (click)="clearSignature()"><i class="fa fa-eraser"></i> Clear Signature</div>&nbsp;
-                  <div class="btn btn-warning" (click)="uploadFiles('', 'signature')"><i class="fa fa-save"></i> Save Signature</div>&nbsp;
+                  <div class="btn btn-warning" (click)="uploadFiles('', 'signature', false)"><i class="fa fa-save"></i> Save Signature</div>&nbsp;
                </div>
-               <div class="col-md-3 document-section">
-                  <div class="align-items-center mb-10">
+               </div>
+               <div class="row">
+               <div class="col-md-12 document-section">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <p>JPG or PNG format required!</p>
+                     </div>
+                     
+                  <div class="col-md-5 align-items-center mb-10" *ngIf="isSignature">
+                     <label><b>Upload Signature</b></label>
+                     <div class="d-inline-flex flex-row-start">
+                        <input type="file" class="custom-file-input" name="signature" (change)="uploadFiles($event, 'signature', true)" />
+                     </div>
+                  </div>
+                  <div class="col-md-5 align-items-center mb-10">
                      <label><b>Upload NIC</b></label>
                      <div class="d-inline-flex flex-row-start">
-                        <input type="file" class="custom-file-input" name="nic_card" (change)="uploadFiles($event, 'nic_card')" />
+                        <input type="file" class="custom-file-input" name="nic_card" (change)="uploadFiles($event, 'nic_card', false)" />
                      </div>
                   </div>
-                  <hr>
-                  <div class="align-items-center mb-10">
+                  <div class="col-md-5 align-items-center">
                      <label><b>Upload School Leaving</b></label>
-                     <div class="flex-row-start">
-                        <input type="file" class="custom-file-input" name="school_leaving_certificate" (change)="uploadFiles($event, 'school_leaving_certificate')" />
+                     <div class="d-inline-flex flex-row-start">
+                        <input type="file" class="custom-file-input" name="school_leaving_certificate" (change)="uploadFiles($event, 'school_leaving_certificate', false)" />
                      </div>
                   </div>
-                  <hr>
-               <div class="align-items-center">
+               <div class="col-md-5 align-items-center">
                   <label><b>Upload A/L Certificate</b></label>
-                     <div class="flex-row-start">
-                        <input type="file" class="custom-file-input" name="advance_level_certificate" (change)="uploadFiles($event, 'advance_level_certificate')" />
+                     <div class="d-inline-flex flex-row-start">
+                        <input type="file" class="custom-file-input" name="advance_level_certificate" (change)="uploadFiles($event, 'advance_level_certificate', false)" />
                      </div>
                      <!-- <div class="d-inline-flex flex-row-reverse">
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>&nbsp;Upload</button>
@@ -508,6 +530,8 @@
                   </div>
                   <!-- <div class="btn btn-warning mb-10" (click)="uploadFiles('school_leaving_certificate')"><i class="fa fa-upload"></i> Upload School Leaving</div>
                   <div class="btn btn-warning mb-10" (click)="uploadFiles('advance_level_certificate')"><i class="fa fa-upload"></i> Upload A/L certificate</div> -->
+               </div>
+            </div>
                </div>
                </div>
                </div>

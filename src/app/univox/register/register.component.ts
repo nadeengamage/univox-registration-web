@@ -31,6 +31,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     degree: null,
     nic: null
   }
+  isSignature = false;
   registrationForm: FormGroup;
   submitted = false;
   public pad = {
@@ -156,6 +157,10 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     this.signaturePad.clear();
   }
 
+  canSignature(status) {
+this.isSignature = status
+  }
+
   DataURIToBlob(dataURI: string) {
     const splitDataURI = dataURI.split(',')
     const byteString = splitDataURI[0].indexOf('base64') >= 0 ? atob(splitDataURI[1]) : decodeURI(splitDataURI[1])
@@ -168,11 +173,13 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     return new Blob([ia], { type: mimeString })
   }
 
-  uploadFiles(data, type) {
+  uploadFiles(data, type, diff) {
     // uploadFiles
 
     this.submitFile = null
-    if (type !== 'signature') {
+    if (!diff && type !== 'signature') {
+      this.submitFile = data.target.files[0]
+    } else if (diff && type === 'signature') {
       this.submitFile = data.target.files[0]
     } else {
       if (!this.pad.signature) {

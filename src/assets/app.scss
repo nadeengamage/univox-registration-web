@@ -890,6 +890,9 @@ ngx-loading .custom-class {
   .note {
     display: block !important;
   }
+  .document-section, .document-section .mb-10 {
+    margin-bottom: 0 !important;
+  }
 }
 
 @media only screen and (max-width: 550px) {
