@@ -186,7 +186,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
         // console.log(res);
         if (res.length >= 0) {
           this.loading = false;
-          this.getRegisterDetails();
+          // this.getRegisterDetails();
           this.notifier.notify('success', 'Document upload success!');
         } else {
           this.loading = false;
@@ -353,6 +353,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
       distance_to_address: this.registrationForm.value.kmFromAddress,
       distance_work: this.registrationForm.value.kmFromWork
   }
+  console.log(payload.full_name)
     if (!this.registrationForm.invalid) {
       this.loading = true;
       this.univoxService.saveData(payload, this.registrationForm.value.id).subscribe(
