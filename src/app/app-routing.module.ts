@@ -13,7 +13,8 @@ const routes: Routes = [
   children: [
     { path: 'register', component: RegisterComponent },
   ] },
-  { path: '404', component: NotFoundComponent }
+  { path: '404', component: NotFoundComponent },
+  {path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({

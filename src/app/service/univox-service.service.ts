@@ -6,7 +6,7 @@ import { HttpUtilsService } from './http-utils.service';
 })
 export class UnivoxService {
 
-  private baseUrl = 'https://univox.site';
+  private baseUrl = 'http://139.162.14.211:8080';
 
   private getDetailsEndPoint: string;
   private createDetailsEndPoint: string;

@@ -39,6 +39,9 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
   };
   submitFile
   isSign = false
+  isNic = false
+  isSchoolLeaving = false
+  isCertificate = false
   // subject_keyword = 'subject_name';
   // stream_keyword = 'stream_name';
   common_keyword = 'name';
@@ -47,7 +50,8 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     {id: 2,name: 'STREAM 2'},
   ]
   public subjects = [
-    {id: 1,name: 'Physics'},{id: 2,name: 'Chemistry'},{id: 3,name: 'Mathematics'},{id: 4,name: 'Agricultural Science'},{id: 5,name: 'Biology'},{id: 6,name: 'Combined Mathematics'},{id: 7,name: 'Higher Mathematics'},{id: 8,name: 'Common General Test'},{id: 9,name: 'General English'},
+    {id: 1,name: 'Physics'},{id: 2,name: 'Chemistry'},{id: 3,name: 'Mathematics'},{id: 4,name: 'Agricultural Science'},{id: 5,name: 'Biology'},{id: 6,name: 'Combined Mathematics'},{id: 7,name: 'Higher Mathematics'},
+    // {id: 8,name: 'Common General Test'},{id: 9,name: 'General English'},
     {id: 10,name: 'Civil Technology'},{id: 11,name: 'Mechanical Technology'},{id: 12,name: 'Electrical, Electronic and Information Technology'},{id: 13,name: 'Food Technology'},{id: 14,name: 'Agriculture Technology'},{id: 15,name: 'Bio Resource Technology'},{id: 16,name: 'Information & Communication Technology'},{id: 17,name: 'Economics'},{id: 18,name: 'Geography'},{id: 19,name: 'Political Science'},
     {id: 20,name: 'Logic and Scientific Method'},{id: 21,name: 'History of Sri Lanka'},{id: 22,name: 'History of India'},{id: 23,name: 'History of Europe'},{id: 24,name: 'Modern World History'},{id: 25,name: 'Home Economics'},{id: 26,name: 'Communication & Media Studies'},{id: 27,name: 'Business Statistics'},{id: 28,name: 'Business Studies'},{id: 29,name: 'Accountancy'},
     {id: 30,name: 'Buddhism'},{id: 31,name: 'Hinduism'},{id: 32,name: 'Christianity'},{id: 33,name: 'Islam'},{id: 34,name: 'Buddhist Civilization'},{id: 35,name: 'Hindu Civilization'},{id: 36,name: 'Islam Civilization'},{id: 37,name: 'Greek and Roman Civilization'},{id: 38,name: 'Christian Civilization'},{id: 39,name: 'Art'},
@@ -263,6 +267,13 @@ public alattemt = [
     this.submitFile = null
     if (!diff && type !== 'signature') {
       this.submitFile = data.target.files[0]
+      if (type === 'nic_card') {
+        this.isNic = true
+      } else if (type === 'school_leaving_certificate') {
+        this.isSchoolLeaving = true
+      } else {
+        this.isCertificate = true
+      }
     } else if (diff && type === 'signature') {
       this.submitFile = data.target.files[0]
       this.isSign = true
@@ -386,7 +397,7 @@ public alattemt = [
       subject2: this.details.sub_2,
       subject3: this.details.sub_3,
       subject4: 'General English',
-      subject5: 'Common Test',
+      subject5: 'Common General Test',
       subject6: this.details.sub_6,
       grade1: this.details.grd_1,
       grade2: this.details.grd_2,
@@ -458,6 +469,15 @@ public alattemt = [
       if (!this.isSign) {
         this.notifier.notify('error', 'Please save your signature!');
         return
+      } else if (!this.isNic) {
+        this.notifier.notify('error', 'Please upload your NIC!');
+        return
+      } else if (!this.isSchoolLeaving) {
+        this.notifier.notify('error', 'Please upload your school leaving!');
+        return
+      } else if (!this.isCertificate) {
+        this.notifier.notify('error', 'Please upload your certificate!');
+        return
       }
       this.loading = true;
       this.univoxService.saveData(payload, this.registrationForm.value.id).subscribe(
@@ -466,9 +486,12 @@ public alattemt = [
             this.loading = false;
           // this.notifier.notify('success', 'Your details was recorded. Thank you!');
           this.isSign = false
+          this.isNic = false
+          this.isSchoolLeaving = false
+          this.isCertificate = false
           Swal.fire({
-            title: 'Your details has been recorded!',
-            text: 'Do you want to logout?',
+            title: 'Thank You! Your are information have been recorded successfully!',
+            text: 'A confirmation email already sent to your E-mail address ' + this.registrationForm.value.email +' provided at the registration.',
             icon: 'success',
             showCancelButton: true,
             confirmButtonText: 'No, Keep Me Log In',
