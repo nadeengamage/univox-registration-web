@@ -43,7 +43,22 @@ img {
     font-weight: 300;
 }
 .navbar img {
-	width: 40px;
+  width: 40px;
+  display: inline-block;
+}
+.navbar .name {
+  margin-left: 5px;
+  display: inline-block;
+}
+.navbar .name span {
+  display: block;
+}
+.navbar .name span:last-child {
+  display: block;
+  /* margin-left: 44px; */
+  font-size: 8px;
+  /* margin-top: -12px; */
+  font-weight: 100;
 }
 .btn {
 	border-radius: 100px;
@@ -892,7 +907,7 @@ textarea.form-control {
     display: block;
   }
   .navRight p, .navRight button {
-    float: right;
+    display: inline-block;
     text-align: center;
   }
   main {
