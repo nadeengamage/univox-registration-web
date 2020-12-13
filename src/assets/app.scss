@@ -856,10 +856,14 @@ ngx-loading .custom-class {
   font-size: 12px;
 }
 .privacy {
-  font-size: 15px;
+  font-size: 13px;
 }
 .privacy p {
   margin-bottom: 5px;
+}
+.privacy .dan {
+  color: #f00;
+  font-weight: 600;
 }
 .privacy ul {
   text-align: left;

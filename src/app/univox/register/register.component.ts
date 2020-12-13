@@ -164,20 +164,33 @@ public alattemt = [
       // 'warning',
       title: '<strong>Welcome to UnivoX Student Registration System!</strong>',
       icon: 'warning',
-      width: 1000,
+      width: 1200,
       html:
         '<div class="privacy"><p>Please kindly read the below instructions.</p>' +
-        '<p class="oneatmpt">Your NIC number will only have one attempt to complete this registration form.</p>' +
+        '<p>You are allowed to Log-In or Log-Out from the system freely.</p>' +
+        '<p class="oneatmpt">After successfully filling in relevant details, once you click ‘Save Details’ you will be logged out from the system and a confirmation email will be sent to your email ID. You are <span class="dan">NOT</span> allowed to log in again.</p>' +
         '<hr>' +
-        '<span><b>Instructions to Students</b></span>' +
+        '<p>Before starting to fill in the form, kindly be ready to submit your scanned images of the AL Exam Result certificate, School Leaving Certificate, National ID card, and Signature image. Please note if you can place your signature on the Signing Pad no need for a Signature Image.</p>' +
+        '<hr>' +
+        '<span><b>Furthermore</b></span>' +
         '<ul><li>You will have only one attempt to complete this registration.</li>' +
-        '<li>All the fields highlighted in gray color and are disabled, cannot be edited.</li>' +
-        '<li>Any filed that is enabled must be fill with appropriate details and some are compulsory.</li>' +
+        '<li>All the fields highlighted in gray color are disabled; cannot be edited.</li>' +
+        '<li>Any field that is enabled must be filled with correct details and some are compulsory.</li>' +
         '<li>When you upload your certificate images kindly use moderate size clear images.</li>' +
-        '<li>Please use digital signature area to sign the document or upload a clear photo of your signature.</li>' +
-        '<li>After you successfully submit the form you will be logged out and a registration confirmation email will be sent to your personal email address.</li>' +
+        '<li>Please use the digital signature area to sign the document or upload a clear image of your signature.</li>' +
+        '<li>After you successfully submit the form, you will be logged out and a registration confirmation email will be received to your personal email address.</li>' +
+        '<li>You can use the comments field for any comment that you need to make.</li>' +
+        '<li>If any assistance necessary, you may write to <a href="mailto:admission2020@univotec.ac.lk">admission2020@univotec.ac.lk</a></li>' +
         '</ul>' + 
-        '<p class="tks">Thank You,<br>University of Vocational Technology.</p></div>',
+        '<p class="tks">Thank You,<br>University of Vocational Technology.</p>' +
+        '<hr>' +
+        '<span><b>Terms of Use</b></span>' +
+        '<ul><li>Students must prepare their NIC image, School Leaving, A/L result sheet, and Personal Signature clearly scanned and prepared for upload.</li>' +
+        '<li>If students use the digital signing signature pad no need for a Signature Image.</li>' +
+        '<li>Students can login and double-check the details provided before clicking the ‘Save Details’ button; You can login and logout without saving. When the ‘Save Details’ button is clicked, the information is recorded, and the user will be automatically logged out plus a confirmation email will be sent out to Admin and a copy to the student him/herself to their email provided at the registration.</li>' +
+        '<li>If any assistance is necessary, you may write to <a href="mailto:admission2020@univotec.ac.lk">admission2020@univotec.ac.lk</a></li>' +
+        '<li>If a student accidentally clicks the saved button and if he/she wants to change information, he/she must write to <a href="mailto:admission2020@univotec.ac.lk">admission2020@univotec.ac.lk</a>, and then an authorized officer should send an official request to <a href="mailto:admin@univox.site">admin@univox.site</a> thereafter the NIC block will be lifted, and then again student can edit and resubmit.</li>' +
+        '</div>',
       showCloseButton: true,
       showCancelButton: false,
       focusConfirm: false,
