@@ -46,8 +46,12 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
   // stream_keyword = 'stream_name';
   common_keyword = 'name';
   streams = [
-    {id: 1,name: 'STREAM 1'},
-    {id: 2,name: 'STREAM 2'},
+    {id: 1,name: 'Engineering Technology'},
+    {id: 2,name: 'Bio-Systems Technology'},
+    {id: 3,name: 'Physical Science'},
+    {id: 4,name: 'Biological Science'},
+    {id: 5,name: 'Commerce'},
+    {id: 6,name: 'Art'},
   ]
   public subjects = [
     {id: 1,name: 'Physics'},{id: 2,name: 'Chemistry'},{id: 3,name: 'Mathematics'},{id: 4,name: 'Agricultural Science'},{id: 5,name: 'Biology'},{id: 6,name: 'Combined Mathematics'},{id: 7,name: 'Higher Mathematics'},
