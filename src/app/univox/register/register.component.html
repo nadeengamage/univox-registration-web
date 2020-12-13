@@ -681,11 +681,21 @@
                </div>
                <div class="row" *ngIf="registrationForm.controls.presentEducation.value == true">
                   <div class="form-group col-md-6">
-                     <label>If yes, name of the institute and course:</label>
+                     <label>If yes, name of the institute</label>
                      <input title="Enter institute." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="isPresentInstitute"
                         [ngClass]="submitted || isInvalidField('isPresentInstitute') ? 'error-field' : ''">
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('isPresentInstitute')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.isPresentInstitute.errors?.required">
+                        <i class="fa fa-times-circle"></i>&nbsp;Invalid
+                        </span>
+                     </div>
+                  </div>
+                  <div class="form-group col-md-6">
+                     <label>If yes, name of the course</label>
+                        <input title="Enter institute." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="external_education"
+                        [ngClass]="submitted || isInvalidField('external_education') ? 'error-field' : ''">
+                     <div class="err-lbl" *ngIf="submitted || isInvalidField('external_education')">
+                        <span class="field-msg error-msg" *ngIf="registrationForm.controls.external_education.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
                         </span>
                      </div>

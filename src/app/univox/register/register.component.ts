@@ -142,6 +142,7 @@ public alattemt = [
       grade6: [''],
       presentEducation: ['', Validators.required],
       isPresentInstitute: ['', Validators.required],
+      external_education: ['', Validators.required],
       comment: [''],
       degree: {
         id: ['', Validators.required]
@@ -407,6 +408,7 @@ public alattemt = [
       grade6: this.details.grd_6,
       presentEducation: this.details.institution,
       isPresentInstitute: this.details.institution_name,
+      external_education: this.details.external_education,
       comment: this.details.comment,
       application_number: this.details.application_number,
       degree: {
@@ -451,6 +453,7 @@ public alattemt = [
       grd_6: this.registrationForm.value.grade6,
       institution: this.registrationForm.value.presentEducation,
       institution_name: this.registrationForm.value.isPresentInstitute,
+      external_education: this.registrationForm.value.external_education,
       comment: this.registrationForm.value.comment,
       degree: {
           id: this.registrationForm.value.degree.id
