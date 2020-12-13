@@ -64,23 +64,23 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
   public grades = [
     {
       id: 1,
-      name: 'GRADE A'
+      name: 'A'
     },
     {
       id: 2,
-      name: 'GRADE B'
+      name: 'B'
     },
     {
       id: 3,
-      name: 'GRADE C'
+      name: 'C'
     },
     {
       id: 4,
-      name: 'GRADE S'
+      name: 'S'
     },
     {
       id: 5,
-      name: 'GRADE F'
+      name: 'F'
     }
  ];
  public nation = [

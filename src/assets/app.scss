@@ -854,6 +854,20 @@ ngx-loading .custom-class {
   text-align: right;
   font-size: 12px;
 }
+.autocomplete-container .input-container input, .autocomplete-container .suggestions-container ul li a {
+  font-size: 12px !important;
+  line-height: 30px !important;
+  height: 30px !important;
+}
+.autocomplete-container .suggestions-container ul li a {
+  padding: 0 15px !important;
+}
+.autocomplete-container {
+  height: 30px !important;
+}
+.autocomplete-container .input-container .x i {
+  font-size: 15px !important;
+}
 
 @media only screen and (max-width: 769px) {
   .container-fluid {
@@ -913,11 +927,17 @@ ngx-loading .custom-class {
   .document-section, .document-section .mb-10 {
     margin-bottom: 0 !important;
   }
+  .privacy ul {
+    padding: 0;
+  }
 }
 
 @media only screen and (max-width: 550px) {
   .btn-save {
     width: 100% !important;
+  }
+  .swal2-content, .swal2-popup {
+    padding: 0 15px !important;
   }
 }
 

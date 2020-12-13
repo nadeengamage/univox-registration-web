@@ -4,7 +4,7 @@
       If you are trying to fill data using mobile phone, please be patient to use browser in your desktop to get more experience.
    </div>
    <div class="note-2">
-      This is system genarated. The system does not allow to login again after submit your details. Please be patient to submit your correct details on first try!
+      Your NIC number will only have one attempt to complete this registration form.!
       <p class="emr">Emergency contact - Email: <a href="mailto:admission2020@univotec.ac.lk">admission2020@univotec.ac.lk</a></p>
    </div>
    </div>
@@ -28,7 +28,7 @@
                <form [formGroup]="registrationForm" (ngSubmit)="updateDetails()">
                <div class="row">
                   <div class="form-group col-md-7 col-sm-12">
-                     <label>NAME IN FULL AS IN NIC</label>
+                     <label>Name In Full As NIC</label>
                      <textarea title="Enter name in full." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="nameInFull"
                         [ngClass]="submitted || isInvalidField('nameInFull') ? 'error-field' : ''"></textarea>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('nameInFull')">
@@ -38,7 +38,7 @@
                      </div>
                   </div>
                   <div class="form-group col-md-5">
-                     <label>NAME WITH INITIALS</label>
+                     <label>Name With Initials</label>
                      <textarea title="Enter name in initials." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="nameInInitial"
                         [ngClass]="submitted || isInvalidField('nameInInitial') ? 'error-field' : ''"></textarea>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('nameInInitial')">
@@ -48,7 +48,7 @@
                      </div>
                   </div>
                   <div class="form-group col-md-7">
-                     <label>PERMANENT ADDRESS</label>
+                     <label>Permanent Address</label>
                      <textarea title="Enter permanent address." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="permanentAddress"
                         [ngClass]="submitted || isInvalidField('permanentAddress') ? 'error-field' : ''"></textarea>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('permanentAddress')">
@@ -58,7 +58,7 @@
                      </div>
                   </div>
                   <div class="form-group col-md-7">
-                     <label>CONTACT ADDRESS <span>(if contact address differs from permanent address)</span></label>
+                     <label>Contact Address <span>(If contact address differs from permanent address)</span></label>
                      <textarea title="Enter contact address." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="contactAddress"
                         [ngClass]="submitted || isInvalidField('contactAddress') ? 'error-field' : ''"></textarea>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('contactAddress')">
