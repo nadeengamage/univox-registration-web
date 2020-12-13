@@ -4,6 +4,7 @@ import { FullLayoutComponent } from './layouts/full-layout/full-layout.component
 import { AuthGuard } from './service/auth-gaurd.service';
 import { UnivoxComponent } from './univox/univox.component';
 import { RegisterComponent } from './univox/register/register.component';
+import { NotFoundComponent } from './404/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'signin', pathMatch: 'full' },
@@ -12,7 +13,7 @@ const routes: Routes = [
   children: [
     { path: 'register', component: RegisterComponent },
   ] },
-  { path: '**', redirectTo: '404' }
+  { path: '404', component: NotFoundComponent }
 ];
 
 @NgModule({
