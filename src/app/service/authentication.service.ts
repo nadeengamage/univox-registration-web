@@ -70,6 +70,11 @@ export class AuthService {
     return (authToken !== null) ? true : false;
   }
 
+  get isLoggedInUser(): boolean {
+    const authUser = localStorage.getItem('user_details');
+    return (authUser !== null) ? true : false;
+  }
+
   doLogout() {
     const user = JSON.parse(
       window.atob(
