@@ -43,14 +43,8 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
   // stream_keyword = 'stream_name';
   common_keyword = 'name';
   streams = [
-    {
-      id: 1,
-      name: 'STREAM 1'
-    },
-    {
-      id: 2,
-      name: 'STREAM 2'
-    },
+    {id: 1,name: 'STREAM 1'},
+    {id: 2,name: 'STREAM 2'},
   ]
   public subjects = [
     {id: 1,name: 'Physics'},{id: 2,name: 'Chemistry'},{id: 3,name: 'Mathematics'},{id: 4,name: 'Agricultural Science'},{id: 5,name: 'Biology'},{id: 6,name: 'Combined Mathematics'},{id: 7,name: 'Higher Mathematics'},{id: 8,name: 'Common General Test'},{id: 9,name: 'General English'},
@@ -62,66 +56,28 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     {id: 60,name: 'Russian'},{id: 61,name: 'Hindi'},{id: 62,name: 'Chinese'},{id: 63,name: 'Japanese'},
   ];
   public grades = [
-    {
-      id: 1,
-      name: 'A'
-    },
-    {
-      id: 2,
-      name: 'B'
-    },
-    {
-      id: 3,
-      name: 'C'
-    },
-    {
-      id: 4,
-      name: 'S'
-    },
-    {
-      id: 5,
-      name: 'F'
-    }
+    {id: 1,name: 'A'},
+    {id: 2,name: 'B'},
+    {id: 3,name: 'C'},
+    {id: 4,name: 'S'},
+    {id: 5,name: 'F'}
  ];
  public nation = [
-  {
-    id: 1,
-    name: 'SRILANKA'
-  },
-  {
-    id: 2,
-    name: 'OTHER'
-  }
+  {id: 1,name: 'SRILANKA'},
+  {id: 2,name: 'OTHER'}
 ];
  public district = [
-  {
-    id: 1,
-    name: 'COLOMBO'
-  },
-  {
-    id: 2,
-    name: 'KANDY'
-  }
+  {id: 1,name: 'AMPARA'},{id: 2,name: 'ANURADHAPURA'},{id: 3,name: 'BADULLA'},{id: 4,name: 'BATTICALOA'},{id: 5,name: 'COLOMBO'},{id: 6,name: 'GALLE'},{id: 7,name: 'GAMPAHA'},{id: 8,name: 'HAMBANTHOTA'},{id: 9,name: 'JAFFNA'},{id: 10,name: 'KANDY'},
+  {id: 11,name: 'KEGALLE'},{id: 12,name: 'KILINOCHCHI'},{id: 13,name: 'ANURADHAPURA'},{id: 14,name: 'KURUNEHALA'},{id: 15,name: 'MANNAR'},{id: 16,name: 'MATALE'},{id: 17,name: 'MATARA'},{id: 18,name: 'MONARAGALA'},{id: 19,name: 'MULLAITIVU'},{id: 20,name: 'NUWARA ELIYA'},
+  {id: 21,name: 'POLONNARUWA'},{id: 22,name: 'PUTTALAM'},{id: 23,name: 'RATHNAPURA'},{id: 24,name: 'TRINCOMALEE'},{id: 25,name: 'VAVUNIYA'}
 ];
 public year = [
-  {
-    id: 1,
-    name: '2020'
-  },
-  {
-    id: 2,
-    name: '2019'
-  }
+  {id: 1,name: '2020'},{id: 2,name: '2019'}
 ];
 public alattemt = [
-  {
-    id: 1,
-    name: '1'
-  },
-  {
-    id: 2,
-    name: '2'
-  }
+  {id: 1,name: '1'},
+  {id: 2,name: '2'},
+  {id: 3,name: '3'}
 ];
 
   public loading = false;
@@ -144,8 +100,8 @@ public alattemt = [
     this.registrationForm = this.fb.group({
       id: ['', [Validators.required]],
       degreeName: ['', [Validators.required]],
-      nameInFull: ['', [Validators.required]],
-      nameInInitial: ['', Validators.required],
+      nameInFull: [{value: '', disabled: false}, [Validators.required]],
+      nameInInitial: [{value: '', disabled: false}, Validators.required],
       permanentAddress: ['', Validators.required],
       contactAddress: [''],
       residence: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(12),
@@ -361,6 +317,12 @@ public alattemt = [
       this.registrationForm.controls[formControl].errors
       ? true
       : false;
+  }
+
+  isDisabledField (formControl) {
+    if (this.registrationForm.controls[formControl].value) {
+      return true
+    }
   }
 
   getRegisterDetails() {

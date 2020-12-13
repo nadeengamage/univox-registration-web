@@ -29,7 +29,7 @@
                <div class="row">
                   <div class="form-group col-md-7 col-sm-12">
                      <label>Name In Full As NIC</label>
-                     <textarea title="Enter name in full." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="nameInFull"
+                     <textarea title="Enter name in full." type="text" [attr.disabled]="isDisabledField('nameInFull')" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="nameInFull"
                         [ngClass]="submitted || isInvalidField('nameInFull') ? 'error-field' : ''"></textarea>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('nameInFull')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.nameInFull.errors?.required">
@@ -39,7 +39,7 @@
                   </div>
                   <div class="form-group col-md-5">
                      <label>Name With Initials</label>
-                     <textarea title="Enter name in initials." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="nameInInitial"
+                     <textarea title="Enter name in initials." type="text" [attr.disabled]="isDisabledField('nameInFull')" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="nameInInitial"
                         [ngClass]="submitted || isInvalidField('nameInInitial') ? 'error-field' : ''"></textarea>
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('nameInInitial')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.nameInInitial.errors?.required">
@@ -107,7 +107,7 @@
                      </div>
                   </div>
                   <div class="form-group col-md-4">
-                     <label>Nic No</label>
+                     <label>NIC No</label>
                      <!-- <input title="Your NIC." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="nic"
                         [ngClass]="submitted || isInvalidField('nic') ? 'error-field' : ''">
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('nic')">
@@ -118,7 +118,7 @@
                      <input type="text" disabled class="form-control form-control-sm" [(ngModel)]="showData.nic" [ngModelOptions]="{standalone: true}"/>
                   </div>
                   <div class="form-group col-md-4">
-                     <label>Nic issue date</label>
+                     <label>NIC issue date</label>
                      <input title="Yout NIC issue date." type="date" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="issueNic"
                         [ngClass]="submitted || isInvalidField('issueNic') ? 'error-field' : ''">
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('issueNic')">
