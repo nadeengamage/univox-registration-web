@@ -939,6 +939,10 @@ ngx-loading .custom-class {
   .swal2-content, .swal2-popup {
     padding: 0 15px !important;
   }
+  .autocomplete-container, .autocomplete-container .input-container input, .autocomplete-container .suggestions-container ul li a {
+    line-height: 40px !important;
+    height: 40px !important;
+  }
 }
 
 @media only screen and (max-width: 420px) {
