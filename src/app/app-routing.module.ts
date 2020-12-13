@@ -8,9 +8,9 @@ import { RegisterComponent } from './univox/register/register.component';
 const routes: Routes = [
   { path: '', redirectTo: 'signin', pathMatch: 'full' },
   { path: 'signin', component: FullLayoutComponent},
-  { path: 'univox', component: UnivoxComponent, canActivate: [AuthGuard],
+  { path: 'register', component: UnivoxComponent, canActivate: [AuthGuard],
   children: [
-    { path: 'register', component: RegisterComponent },
+    { path: 'details', component: RegisterComponent },
   ] },
   { path: '**', redirectTo: '404' }
 ];

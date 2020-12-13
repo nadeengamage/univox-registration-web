@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (localStorage.getItem('user_details')) {
-      this.router.navigate(['univox/register']);
+      this.router.navigate(['register/details']);
     }
   }
 
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
         if (res.jwt) {
           localStorage.setItem('access_token', res.jwt);
           localStorage.setItem('user_details', window.btoa(JSON.stringify(this.signinForm.value.username)));
-          this.router.navigate(['univox/register']);
+          this.router.navigate(['register/details']);
           this.notifier.notify('success', 'Welcome! - ' + this.signinForm.value.username);
         } else {
           this.notifier.notify('error', 'Authentication failed!');
