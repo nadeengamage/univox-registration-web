@@ -587,29 +587,10 @@
                         </tr>
                         <tr>
                            <td>
-                              <!-- <input title="Enter subject." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="subject4"
-                        [ngClass]="submitted || isInvalidField('subject4') ? 'error-field' : ''"> -->
+                             
                         <label>Subject - 4<sup>*</sup></label>
-                        <div class="ng-autocomplete">
-                           <ng-autocomplete 
-                             [data]="subjects"
-                             [searchKeyword]="common_keyword"
-                             (selected)='selectEvent($event)'
-                             (inputChanged)='onChangeSearch($event)'
-                             (inputFocused)='onFocused($event)'
-                             [itemTemplate]="itemTemplate"
-                             formControlName="subject4"
-                             [notFoundTemplate]="notFoundTemplate">                                 
-                           </ng-autocomplete>
-                            
-                           <ng-template #itemTemplate let-item>
-                           <a [innerHTML]="item.name"></a>
-                           </ng-template>
-                            
-                           <ng-template #notFoundTemplate let-notFound>
-                           <div [innerHTML]="notFound"></div>
-                           </ng-template>
-                           </div>
+                         <input title="Enter subject." type="text" [attr.disabled]="isDisabledField('subject4')" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="subject4"
+                        [ngClass]="submitted || isInvalidField('subject4') ? 'error-field' : ''">
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('subject4')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.subject4.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -649,28 +630,8 @@
                         </tr>
                         <tr>
                            <td>
-                              <!-- <input title="Enter subject." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="subject5"
-                        [ngClass]="submitted || isInvalidField('subject5') ? 'error-field' : ''"> -->
-                        <div class="ng-autocomplete">
-                           <ng-autocomplete 
-                             [data]="subjects"
-                             [searchKeyword]="common_keyword"
-                             (selected)='selectEvent($event)'
-                             (inputChanged)='onChangeSearch($event)'
-                             (inputFocused)='onFocused($event)'
-                             [itemTemplate]="itemTemplate"
-                             formControlName="subject5"
-                             [notFoundTemplate]="notFoundTemplate">                                 
-                           </ng-autocomplete>
-                            
-                           <ng-template #itemTemplate let-item>
-                           <a [innerHTML]="item.name"></a>
-                           </ng-template>
-                            
-                           <ng-template #notFoundTemplate let-notFound>
-                           <div [innerHTML]="notFound"></div>
-                           </ng-template>
-                           </div>
+                              <input title="Enter subject." type="text" [attr.disabled]="isDisabledField('subject5')" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="subject5"
+                        [ngClass]="submitted || isInvalidField('subject5') ? 'error-field' : ''">
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('subject5')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.subject5.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
@@ -678,90 +639,10 @@
                      </div>
                            </td>
                            <td>
-                              <!-- <input title="Enter grade." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="grade5"
-                        [ngClass]="submitted || isInvalidField('grade5') ? 'error-field' : ''"> -->
-                        <div class="ng-autocomplete">
-                           <ng-autocomplete 
-                             [data]="grades"
-                             [searchKeyword]="common_keyword"
-                             (selected)='selectEvent($event)'
-                             (inputChanged)='onChangeSearch($event)'
-                             (inputFocused)='onFocused($event)'
-                             [itemTemplate]="itemTemplate"
-                             formControlName="grade5"
-                             [notFoundTemplate]="notFoundTemplate">                                 
-                           </ng-autocomplete>
-                            
-                           <ng-template #itemTemplate let-item>
-                           <a [innerHTML]="item.name"></a>
-                           </ng-template>
-                            
-                           <ng-template #notFoundTemplate let-notFound>
-                           <div [innerHTML]="notFound"></div>
-                           </ng-template>
-                           </div>
+                              <input title="Enter grade." type="number" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="grade5"
+                        [ngClass]="submitted || isInvalidField('grade5') ? 'error-field' : ''">
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('grade5')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.grade5.errors?.required">
-                        <i class="fa fa-times-circle"></i>&nbsp;Invalid
-                        </span>
-                     </div>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <!-- <input title="Enter subject." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="subject6"
-                        [ngClass]="submitted || isInvalidField('subject6') ? 'error-field' : ''"> -->
-                        <div class="ng-autocomplete">
-                           <ng-autocomplete 
-                             [data]="subjects"
-                             [searchKeyword]="common_keyword"
-                             (selected)='selectEvent($event)'
-                             (inputChanged)='onChangeSearch($event)'
-                             (inputFocused)='onFocused($event)'
-                             [itemTemplate]="itemTemplate"
-                             formControlName="subject6"
-                             [notFoundTemplate]="notFoundTemplate">                                 
-                           </ng-autocomplete>
-                            
-                           <ng-template #itemTemplate let-item>
-                           <a [innerHTML]="item.name"></a>
-                           </ng-template>
-                            
-                           <ng-template #notFoundTemplate let-notFound>
-                           <div [innerHTML]="notFound"></div>
-                           </ng-template>
-                           </div>
-                     <div class="err-lbl" *ngIf="submitted || isInvalidField('subject6')">
-                        <span class="field-msg error-msg" *ngIf="registrationForm.controls.subject6.errors?.required">
-                        <i class="fa fa-times-circle"></i>&nbsp;Invalid
-                        </span>
-                     </div>
-                           </td>
-                           <td>
-                              <!-- <input title="Enter grade." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="grade6"
-                        [ngClass]="submitted || isInvalidField('grade6') ? 'error-field' : ''"> -->
-                        <div class="ng-autocomplete">
-                           <ng-autocomplete 
-                             [data]="grades"
-                             [searchKeyword]="common_keyword"
-                             (selected)='selectEvent($event)'
-                             (inputChanged)='onChangeSearch($event)'
-                             (inputFocused)='onFocused($event)'
-                             [itemTemplate]="itemTemplate"
-                             formControlName="grade6"
-                             [notFoundTemplate]="notFoundTemplate">                                 
-                           </ng-autocomplete>
-                            
-                           <ng-template #itemTemplate let-item>
-                           <a [innerHTML]="item.name"></a>
-                           </ng-template>
-                            
-                           <ng-template #notFoundTemplate let-notFound>
-                           <div [innerHTML]="notFound"></div>
-                           </ng-template>
-                           </div>
-                     <div class="err-lbl" *ngIf="submitted || isInvalidField('grade6')">
-                        <span class="field-msg error-msg" *ngIf="registrationForm.controls.grade6.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
                         </span>
                      </div>

@@ -385,8 +385,8 @@ public alattemt = [
       subject1: this.details.sub_1,
       subject2: this.details.sub_2,
       subject3: this.details.sub_3,
-      subject4: this.details.sub_4,
-      subject5: this.details.sub_5,
+      subject4: 'General English',
+      subject5: 'Common Test',
       subject6: this.details.sub_6,
       grade1: this.details.grd_1,
       grade2: this.details.grd_2,
@@ -407,10 +407,6 @@ public alattemt = [
   }
 
   updateDetails() {
-    if (!this.isSign) {
-      this.notifier.notify('error', 'Please save your signature!');
-      return
-    }
     const payload = {
       id: this.registrationForm.value.id,
       full_name: this.registrationForm.value.nameInFull,
@@ -433,15 +429,15 @@ public alattemt = [
       sub_1: this.registrationForm.value.subject1.name,
       sub_2: this.registrationForm.value.subject2.name,
       sub_3: this.registrationForm.value.subject3.name,
-      sub_4: this.registrationForm.value.subject4.name,
-      sub_5: this.registrationForm.value.subject5.name,
-      sub_6: this.registrationForm.value.subject6.name,
+      sub_4: this.registrationForm.value.subject4,
+      sub_5: this.registrationForm.value.subject5,
+      sub_6: this.registrationForm.value.subject6,
       grd_1: this.registrationForm.value.grade1.name,
       grd_2: this.registrationForm.value.grade2.name,
       grd_3: this.registrationForm.value.grade3.name,
       grd_4: this.registrationForm.value.grade4.name,
-      grd_5: this.registrationForm.value.grade5.name,
-      grd_6: this.registrationForm.value.grade6.name,
+      grd_5: this.registrationForm.value.grade5,
+      grd_6: this.registrationForm.value.grade6,
       institution: this.registrationForm.value.presentEducation,
       institution_name: this.registrationForm.value.isPresentInstitute,
       comment: this.registrationForm.value.comment,
@@ -459,6 +455,10 @@ public alattemt = [
       distance_work: this.registrationForm.value.kmFromWork
   }
     if (!this.registrationForm.invalid) {
+      if (!this.isSign) {
+        this.notifier.notify('error', 'Please save your signature!');
+        return
+      }
       this.loading = true;
       this.univoxService.saveData(payload, this.registrationForm.value.id).subscribe(
         res => {
