@@ -868,6 +868,9 @@ ngx-loading .custom-class {
 .autocomplete-container .input-container .x i {
   font-size: 15px !important;
 }
+textarea.form-control {
+  height: 80px;
+}
 
 @media only screen and (max-width: 769px) {
   .container-fluid {
