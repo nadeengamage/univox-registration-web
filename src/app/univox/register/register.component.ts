@@ -128,7 +128,7 @@ public alattemt = [
       gender: ['', Validators.required],
       nationality: [''],
       religion: [''],
-      district: ['', Validators.required],
+      district: [{value: '', disabled: true}, Validators.required],
       kmFromAddress: ['', Validators.required],
       kmFromWork: [''],
       indexNo: [{value: '', disabled: true}, Validators.required],

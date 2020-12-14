@@ -212,9 +212,9 @@
                <div class="row">
                   <div class="form-group col-md-4">
                      <label>District of residence<sup>*</sup></label>
-                     <!-- <input title="Enter district of residence." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="district"
-                        [ngClass]="submitted || isInvalidField('district') ? 'error-field' : ''"> -->
-                        <div class="ng-autocomplete">
+                     <input title="Enter district of residence." type="text" class="form-control form-control-sm ng-untouched ng-pristine ng-valid" formControlName="district"
+                        [ngClass]="submitted || isInvalidField('district') ? 'error-field' : ''">
+                        <!-- <div class="ng-autocomplete">
                            <ng-autocomplete 
                              [data]="district"
                              [searchKeyword]="common_keyword"
@@ -233,7 +233,7 @@
                            <ng-template #notFoundTemplate let-notFound>
                            <div [innerHTML]="notFound"></div>
                            </ng-template>
-                           </div>
+                           </div> -->
                      <div class="err-lbl" *ngIf="submitted || isInvalidField('district')">
                         <span class="field-msg error-msg" *ngIf="registrationForm.controls.district.errors?.required">
                         <i class="fa fa-times-circle"></i>&nbsp;Invalid
