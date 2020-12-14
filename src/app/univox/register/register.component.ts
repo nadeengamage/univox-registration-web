@@ -70,7 +70,9 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     {id: 2,name: 'B'},
     {id: 3,name: 'C'},
     {id: 4,name: 'S'},
-    {id: 5,name: 'F'}
+    {id: 5,name: 'F'},
+    {id: 6,name: 'W'},
+    {id: 7,name: 'AB'},
  ];
  public nation = [
   {id: 1,name: 'SRI LANKAN'},
