@@ -73,7 +73,7 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
     {id: 5,name: 'F'}
  ];
  public nation = [
-  {id: 1,name: 'SRILANKA'},
+  {id: 1,name: 'SRI LANKAN'},
   {id: 2,name: 'OTHER'}
 ];
  public district = [
@@ -110,8 +110,8 @@ public alattemt = [
     this.registrationForm = this.fb.group({
       id: ['', [Validators.required]],
       degreeName: ['', [Validators.required]],
-      nameInFull: [{value: '', disabled: false}, [Validators.required]],
-      nameInInitial: [{value: '', disabled: false}, Validators.required],
+      nameInFull: [{value: '', disabled: true}, [Validators.required]],
+      nameInInitial: [{value: '', disabled: true}, Validators.required],
       permanentAddress: ['', Validators.required],
       contactAddress: [''],
       residence: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(12),
