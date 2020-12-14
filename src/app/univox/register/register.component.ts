@@ -84,7 +84,8 @@ export class RegisterComponent implements OnDestroy, OnInit, AfterViewInit {
   {id: 21,name: 'POLONNARUWA'},{id: 22,name: 'PUTTALAM'},{id: 23,name: 'RATHNAPURA'},{id: 24,name: 'TRINCOMALEE'},{id: 25,name: 'VAVUNIYA'}
 ];
 public year = [
-  {id: 1,name: '2020'},{id: 2,name: '2019'}
+  {id: 1,name: '2020'},{id: 2,name: '2019'},{id: 3,name: '2018'},{id: 4,name: '2017'},{id: 5,name: '2016'},
+  {id: 6,name: '2015'},{id: 7,name: '2014'},{id: 8,name: '2013'},{id: 9,name: '2012'},{id: 10,name: '2011'},
 ];
 public alattemt = [
   {id: 1,name: '1'},
