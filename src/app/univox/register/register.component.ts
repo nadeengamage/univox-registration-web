@@ -508,8 +508,10 @@ public alattemt = [
       this.univoxService.saveData(payload, this.registrationForm.value.id).subscribe(
         res => {
           if (res.nic_no) {
-            const confirmed = true
-          this.univoxService.updateUserDate(confirmed).subscribe(
+            const confirmedBody = {
+              confirmed: 'true'
+            }
+          this.univoxService.updateUserDate(confirmedBody).subscribe(
             res => {
               console.log('updated!')
             },
