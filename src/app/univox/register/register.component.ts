@@ -457,7 +457,7 @@ public alattemt = [
       nationality: this.registrationForm.value.nationality,
       religion: this.registrationForm.value.religion,
       z_index_number: this.registrationForm.value.indexNo,
-      exam_year: this.registrationForm.value.year,
+      exam_year: this.registrationForm.value.year.name,
       z_score: this.registrationForm.value.zscore,
       attempt: this.registrationForm.value.attempt.name,
       stream: this.registrationForm.value.stream,
