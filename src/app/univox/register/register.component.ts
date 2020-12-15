@@ -459,7 +459,7 @@ public alattemt = [
       z_index_number: this.registrationForm.value.indexNo,
       exam_year: this.registrationForm.value.year,
       z_score: this.registrationForm.value.zscore,
-      attempt: this.registrationForm.value.attempt,
+      attempt: this.registrationForm.value.attempt.name,
       stream: this.registrationForm.value.stream,
       sub_1: this.registrationForm.value.subject1.name,
       sub_2: this.registrationForm.value.subject2.name,
