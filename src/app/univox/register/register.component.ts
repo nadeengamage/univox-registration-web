@@ -508,6 +508,15 @@ public alattemt = [
       this.univoxService.saveData(payload, this.registrationForm.value.id).subscribe(
         res => {
           if (res.nic_no) {
+            const confirmed = true
+          this.univoxService.updateUserDate(confirmed).subscribe(
+            res => {
+              console.log('updated!')
+            },
+            error => {
+              console.log('not updated!')
+            }
+          )
             this.loading = false;
           // this.notifier.notify('success', 'Your details was recorded. Thank you!');
           this.isSign = false

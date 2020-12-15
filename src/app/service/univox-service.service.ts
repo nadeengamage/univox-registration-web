@@ -14,6 +14,7 @@ export class UnivoxService {
   private authenticateEndPoint: string;
   private getStreamEndPoint: string;
   private getSubjectEndPoint: string;
+  private updateUser: string;
 
   constructor(private http: HttpUtilsService) {
 
@@ -24,9 +25,14 @@ export class UnivoxService {
     this.authenticateEndPoint = this.baseUrl + '/auth/local';
     this.getStreamEndPoint = this.baseUrl + '/streams';
     this.getSubjectEndPoint = this.baseUrl + '/subject/1';
+    this.updateUser = this.baseUrl + '/users/295';
   }
 
   ///////////
+  public updateUserDate(data) {
+    const auth = this.updateUser
+    return this.http.put(auth, data);
+  }
   public authenticateUser(data) {
     const auth = this.authenticateEndPoint
     return this.http.post(auth, data);
