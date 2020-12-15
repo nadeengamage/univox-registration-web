@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
     }
     this.univoxService.authenticateUser(data).subscribe(
       res => {
-        if (res.user.updated_at !== null) {
+        if (res.user.updated_at === null) {
         if (res.jwt) {
           localStorage.setItem('access_token', res.jwt);
           localStorage.setItem('user_details', window.btoa(JSON.stringify(this.signinForm.value.username)));
