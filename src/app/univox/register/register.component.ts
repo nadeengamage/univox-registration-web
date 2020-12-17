@@ -511,7 +511,7 @@ public alattemt = [
             const confirmedBody = {
               confirmed: 'true'
             }
-          this.univoxService.updateUserDate(confirmedBody).subscribe(
+          this.univoxService.updateUserDate(confirmedBody, this.registrationForm.value.id).subscribe(
             res => {
               console.log('updated!')
             },

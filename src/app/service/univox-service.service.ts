@@ -25,12 +25,14 @@ export class UnivoxService {
     this.authenticateEndPoint = this.baseUrl + '/auth/local';
     this.getStreamEndPoint = this.baseUrl + '/streams';
     this.getSubjectEndPoint = this.baseUrl + '/subject/1';
-    this.updateUser = this.baseUrl + '/users/295';
+    this.updateUser = this.baseUrl + '/users/{user}';
   }
 
   ///////////
-  public updateUserDate(data) {
-    const auth = this.updateUser
+  public updateUserDate(data, user) {
+    const auth = this.updateUser.replace(
+      '{user}', user
+    );
     return this.http.put(auth, data);
   }
   public authenticateUser(data) {
