@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit {
         if (res.jwt) {
           localStorage.setItem('access_token', res.jwt);
           localStorage.setItem('user_details', window.btoa(JSON.stringify(this.signinForm.value.username)));
+          localStorage.setItem('user_id', window.btoa(JSON.stringify(res.user.id)));
           this.router.navigate(['univox/register']);
           this.notifier.notify('success', 'Welcome! - ' + this.signinForm.value.username);
         } else {

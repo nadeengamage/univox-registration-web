@@ -412,7 +412,7 @@ public alattemt = [
       kmFromAddress: this.details.distance_to_address,
       kmFromWork: this.details.distance_work,
       indexNo: this.details.z_index_number,
-      year: this.details.exam_year,
+      year: this.details.exam_year ? this.details.exam_year : '',
       zscore: this.details.z_score,
       attempt: this.details.attempt ? this.details.attempt : '',
       stream: this.details.stream ? this.details.stream : '',
@@ -442,6 +442,9 @@ public alattemt = [
   }
 
   updateDetails() {
+    this.registrationForm.patchValue({
+      exam_year: this.registrationForm.value.year.name ? this.registrationForm.value.year.name : '',
+    })
     const payload = {
       id: this.registrationForm.value.id,
       full_name: this.registrationForm.value.nameInFull,
@@ -511,7 +514,7 @@ public alattemt = [
             const confirmedBody = {
               confirmed: 'true'
             }
-          this.univoxService.updateUserDate(confirmedBody, this.registrationForm.value.id).subscribe(
+          this.univoxService.updateUserDate(confirmedBody, window.atob(localStorage.getItem('user_id'))).subscribe(
             res => {
               console.log('updated!')
             },
