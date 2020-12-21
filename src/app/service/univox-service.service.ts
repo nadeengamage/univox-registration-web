@@ -51,9 +51,9 @@ export class UnivoxService {
     );
     return this.http.put(create, data);
   }
-  public uploadFiles(data, type) {
+  public uploadFiles(data, type, id) {
     const upload = this.uploadFileEndPoint;
-    return this.http.multiPart(upload, data, type);
+    return this.http.multiPart(upload, data, type, id);
   }
   public getStream() {
     const stream = this.getStreamEndPoint;

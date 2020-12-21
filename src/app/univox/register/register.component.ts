@@ -312,7 +312,7 @@ public alattemt = [
     
     // console.log(this.submitFile)
     this.loading = true;
-    this.univoxService.uploadFiles(this.submitFile, type).subscribe(
+    this.univoxService.uploadFiles(this.submitFile, type, this.registrationForm.value.id).subscribe(
       res => {
         // console.log(res);
         if (res.length >= 0) {
